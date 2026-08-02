@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cs5d5po13a7u7"]
+
+[ext_resource type="Script" uid="uid://b2ehruxvdiul5" path="res://Scripts/player.gd" id="1_mkbva"]
+[ext_resource type="Texture2D" uid="uid://cy7bagm4nsi5x" path="res://Temp Sprites/player_placeholder.png" id="2_mkbva"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ryixy"]
+radius = 16.0
+height = 48.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mako7"]
+radius = 16.0
+height = 48.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1002642745]
+script = ExtResource("1_mkbva")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1724051773]
+position = Vector2(0.031252146, 0.031252146)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_mkbva")
+
+[node name="Physics" type="CollisionShape2D" parent="." unique_id=1814544759]
+shape = SubResource("CapsuleShape2D_ryixy")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=826410421]
+collision_layer = 3
+collision_mask = 3
+
+[node name="Hitbox" type="CollisionShape2D" parent="Area2D" unique_id=1028507353]
+shape = SubResource("CapsuleShape2D_mako7")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=361214871]
+
+[node name="DashTimer" type="Timer" parent="." unique_id=1015700200]
+wait_time = 0.5
+one_shot = true
+
+[node name="DashCooldownTimer" type="Timer" parent="." unique_id=773645482]
+one_shot = true
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="DashCooldownTimer" to="." method="_on_dash_cooldown_timer_timeout"]
