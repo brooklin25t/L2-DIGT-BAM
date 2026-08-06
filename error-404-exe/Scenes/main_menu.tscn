@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cj0e7635ub3iq"]
 
 [ext_resource type="Script" uid="uid://dynokykecqmfn" path="res://Scripts/main_menu.gd" id="1_28flt"]
+[ext_resource type="Script" uid="uid://cekvfpoy38ck4" path="res://Scripts/start_button.gd" id="2_48xlc"]
 
 [node name="main-menu" type="Node2D" unique_id=1942784980]
 script = ExtResource("1_28flt")
@@ -25,6 +26,7 @@ offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Begin"
+script = ExtResource("2_48xlc")
 
 [node name="Button" type="Button" parent="Control" unique_id=603296016]
 layout_mode = 1
