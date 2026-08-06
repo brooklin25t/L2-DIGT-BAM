@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="error-404-exe-backup"
+config/name="error-404-exe"
 run/main_scene="uid://cb6lcnsoocqhk"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
@@ -23,6 +23,7 @@ window/stretch/aspect="expand"
 [global_group]
 
 Enemies=""
+Player=""
 
 [input]
 
