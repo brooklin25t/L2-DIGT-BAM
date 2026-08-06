@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://cb6lcnsoocqhk"]
 
+[ext_resource type="PackedScene" uid="uid://c17cuyysif6pp" path="res://Prefab/area_2d.tscn" id="1_6ssoq"]
 [ext_resource type="PackedScene" uid="uid://cs5d5po13a7u7" path="res://Prefab/player.tscn" id="1_vk57k"]
 [ext_resource type="Texture2D" uid="uid://cgv16rnmkp4n5" path="res://Temp Sprites/floor_placeholder.png" id="1_xfk5q"]
 [ext_resource type="Texture2D" uid="uid://dv15xpde53ssw" path="res://Temp Sprites/Untitled_Artwork 19.png" id="2_oovug"]
@@ -221,14 +222,5 @@ theme_override_font_sizes/font_size = 31
 text = "For now you are not 
 able to kill enimes"
 
-[node name="Label5" type="Label" parent="Game UI" unique_id=509012787]
-layout_mode = 0
-offset_left = 8432.0
-offset_top = 1896.0
-offset_right = 8696.0
-offset_bottom = 2007.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 25
-text = "This is where a portal 
-will be how ever we 
-have not made it yet"
+[node name="Portal" parent="." unique_id=816684105 instance=ExtResource("1_6ssoq")]
+position = Vector2(8636, 1932)
