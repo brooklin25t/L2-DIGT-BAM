@@ -11,7 +11,7 @@ height = 48.0
 radius = 16.0
 height = 48.0
 
-[node name="Player" type="CharacterBody2D" unique_id=1002642745]
+[node name="Player" type="CharacterBody2D" unique_id=1002642745 groups=["Player"]]
 script = ExtResource("1_mkbva")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1724051773]
@@ -22,7 +22,7 @@ texture = ExtResource("2_mkbva")
 [node name="Physics" type="CollisionShape2D" parent="." unique_id=1814544759]
 shape = SubResource("CapsuleShape2D_ryixy")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=826410421]
+[node name="Area2D" type="Area2D" parent="." unique_id=826410421 groups=["Player"]]
 collision_layer = 3
 collision_mask = 3
 
