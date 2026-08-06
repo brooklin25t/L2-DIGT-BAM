@@ -22,11 +22,11 @@ texture = ExtResource("2_mkbva")
 [node name="Physics" type="CollisionShape2D" parent="." unique_id=1814544759]
 shape = SubResource("CapsuleShape2D_ryixy")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=826410421 groups=["Player"]]
+[node name="character" type="Area2D" parent="." unique_id=826410421 groups=["Player"]]
 collision_layer = 3
 collision_mask = 3
 
-[node name="Hitbox" type="CollisionShape2D" parent="Area2D" unique_id=1028507353]
+[node name="Hitbox" type="CollisionShape2D" parent="character" unique_id=1028507353]
 shape = SubResource("CapsuleShape2D_mako7")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=361214871]
@@ -39,6 +39,6 @@ one_shot = true
 [node name="DashCooldownTimer" type="Timer" parent="." unique_id=773645482]
 one_shot = true
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="character" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="DashCooldownTimer" to="." method="_on_dash_cooldown_timer_timeout"]
