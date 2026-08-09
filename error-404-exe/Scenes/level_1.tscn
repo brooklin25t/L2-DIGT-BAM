@@ -1,11 +1,11 @@
 [gd_scene format=4 uid="uid://cb6lcnsoocqhk"]
 
 [ext_resource type="PackedScene" uid="uid://c17cuyysif6pp" path="res://Prefab/area_2d.tscn" id="1_6ssoq"]
+[ext_resource type="Script" uid="uid://dow64l0ud1e25" path="res://Scripts/level_1.gd" id="1_imks0"]
 [ext_resource type="PackedScene" uid="uid://cs5d5po13a7u7" path="res://Prefab/player.tscn" id="1_vk57k"]
 [ext_resource type="Texture2D" uid="uid://cgv16rnmkp4n5" path="res://Temp Sprites/floor_placeholder.png" id="1_xfk5q"]
 [ext_resource type="Texture2D" uid="uid://dv15xpde53ssw" path="res://Temp Sprites/Untitled_Artwork 19.png" id="2_oovug"]
 [ext_resource type="Texture2D" uid="uid://c65q0tj6p76lg" path="res://Temp Sprites/Untitled_Artwork 20.png" id="3_8i23i"]
-[ext_resource type="PackedScene" uid="uid://ce18ltn55c2g5" path="res://Prefab/enemy.tscn" id="4_7p6j4"]
 [ext_resource type="Texture2D" uid="uid://b4r5hhvvxdcna" path="res://Temp Sprites/Untitled_Artwork 21.png" id="4_8yhm2"]
 [ext_resource type="Texture2D" uid="uid://siv2vi45fbo3" path="res://Temp Sprites/Untitled_Artwork 22.png" id="5_pjppf"]
 [ext_resource type="Texture2D" uid="uid://xc0o3p0n0ast" path="res://Temp Sprites/Untitled_Artwork 23.png" id="6_6ssoq"]
@@ -160,6 +160,7 @@ sources/16 = SubResource("TileSetAtlasSource_vr6f4")
 sources/17 = SubResource("TileSetAtlasSource_vyomg")
 
 [node name="Level 1" type="Node2D" unique_id=878887162]
+script = ExtResource("1_imks0")
 
 [node name="Tilemaps" type="Node2D" parent="." unique_id=874905333]
 
@@ -170,10 +171,6 @@ metadata/_edit_lock_ = true
 
 [node name="character" parent="." unique_id=343074308 instance=ExtResource("1_vk57k")]
 position = Vector2(576, 320)
-
-[node name="Enemy" parent="." unique_id=372405923 node_paths=PackedStringArray("player") instance=ExtResource("4_7p6j4")]
-position = Vector2(127, -354)
-player = NodePath("../character")
 
 [node name="Game UI" type="Control" parent="." unique_id=213933204]
 layout_mode = 3
@@ -224,3 +221,10 @@ able to kill enimes"
 
 [node name="Portal" parent="." unique_id=816684105 instance=ExtResource("1_6ssoq")]
 position = Vector2(8636, 1932)
+
+[node name="enemy_spawn_timer" type="Timer" parent="." unique_id=1453616420]
+wait_time = 4.0
+autostart = true
+
+[connection signal="timeout" from="enemy_spawn_timer" to="." method="_on_enemy_spawn_timer_timeout"]
+[connection signal="timeout" from="enemy_spawn_timer" to="character" method="_on_enemy_spawn_timer_timeout"]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c17cuyysif6pp"]
 
 [ext_resource type="Script" uid="uid://xvlkfterop0b" path="res://Scripts/portal.gd" id="1_adkk7"]
-[ext_resource type="Texture2D" uid="uid://dqo6x4hppm3yp" path="res://icon.svg" id="2_adkk7"]
+[ext_resource type="Texture2D" uid="uid://b27tnfmkbdynx" path="res://Temp Sprites/portal.png" id="2_adkk7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mako7"]
 size = Vector2(64, 120)
@@ -14,8 +14,8 @@ position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_mako7")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=92291260]
-position = Vector2(0, 4)
-scale = Vector2(0.5, 0.9375)
+position = Vector2(-1.9073486e-06, 3.9999943)
+scale = Vector2(0.99999994, 1.875)
 texture = ExtResource("2_adkk7")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

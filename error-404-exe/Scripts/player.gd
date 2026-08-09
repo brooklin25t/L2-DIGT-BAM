@@ -16,6 +16,7 @@ var dash_direction: Vector2 = Vector2.ZERO
 @onready var dash_cooldown: Timer = $DashCooldownTimer
 
 
+
 func respawn():
 	# Reset the player's position back to the spawn
 	global_position = spawn_position

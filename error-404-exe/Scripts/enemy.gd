@@ -14,6 +14,7 @@ func respawn():
 
 func _physics_process(delta: float) -> void:
 	if player == null:
+		print("no player")
 		return
 	#Where is the player
 	var direction = (player.position - position).normalized()

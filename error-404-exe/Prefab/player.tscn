@@ -36,6 +36,7 @@ wait_time = 0.5
 one_shot = true
 
 [node name="DashCooldownTimer" type="Timer" parent="." unique_id=773645482]
+wait_time = 3.0
 one_shot = true
 
 [connection signal="area_entered" from="character" to="." method="_on_area_2d_area_entered"]
