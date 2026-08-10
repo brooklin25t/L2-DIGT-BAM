@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
 
-const SPEED = 200.0
-@export var player : Node2D
+const SPEED = 300.0
+@export var player_prefab = preload("res://Prefab/player.tscn")
 @onready var spawn_position: Vector2 = global_position
+var player = player_prefab.instantiate()
 
 func respawn():
 	# Reset the player's position back to the spawn

@@ -159,6 +159,11 @@ sources/15 = SubResource("TileSetAtlasSource_gcla0")
 sources/16 = SubResource("TileSetAtlasSource_vr6f4")
 sources/17 = SubResource("TileSetAtlasSource_vyomg")
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_3kso8"]
+vertices = PackedVector2Array(451.4297, -244.28125, 36.59375, -232.34375, 69.671875, -462, 1726.8594, -462, 622.6328, -267.85938, 646.6328, 387, 487.4375, 387, 1519.0938, -280.0625, 2853.1406, 1055, 2883.8672, 690, 6051.383, 1055, 3381.4922, 690, 4917.492, -1727.5703, 6336.8594, 816.4297, 7696.461, 1452.5703, 7349.797, 1021.5, 6659.5234, -726.3203, 6707.2266, -974.8281, 7960.133, -951.03125, 9255.352, -476.40625, 9859.133, 163.10156, 9882.977, 897.5703, 5769.961, -1999.7969, 7113.172, -1833.2734, 7488.422, -1657.4297, 7510.5313, -1337.3594, 7076.6875, -1149.4609, 6588, -1018.28125, 6277.789, -827.14844, 6008.4688, -741.84375, 6927.422, 744.6328, 6046.297, -548.39844, 9812.367, 1538.0234, 9292.289, 2186.8828, 8263.461, 2163.0703, 7922.8984, 1904.4375, 6167.4688, -641.6094, 6057.258, -544.6719)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(4, 5, 6, 0), PackedInt32Array(7, 4, 3), PackedInt32Array(8, 7, 3, 9), PackedInt32Array(10, 8, 9, 11), PackedInt32Array(10, 11, 12, 13), PackedInt32Array(14, 15, 16, 17, 18, 19, 20, 21), PackedInt32Array(22, 23, 24, 25, 26, 27), PackedInt32Array(22, 27, 28, 29, 12), PackedInt32Array(30, 13, 12, 31), PackedInt32Array(21, 32, 33, 34, 35, 14), PackedInt32Array(36, 16, 15, 30, 37), PackedInt32Array(31, 37, 30), PackedInt32Array(12, 29, 31)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(61, -472, 1731, -472, 2888, 680, 3376, 680, 4911, -1736, 5769, -2010, 7116, -1843, 7498, -1664, 7521, -1331, 7080, -1140, 6592, -1009, 6282, -818, 6020, -735, 6055, -556, 6163, -651, 6651, -735, 6699, -985, 7962, -961, 9261, -485, 9869, 159, 9893, 898, 9822, 1542, 9297, 2197, 8260, 2173, 7915, 1911, 7688, 1458, 7343, 1029, 6925, 755, 6341, 826, 6055, 1065, 2849, 1065, 1515, -270, 633, -258, 657, 397, 478, 397, 442, -234, 25, -222)])
+
 [node name="Level 1" type="Node2D" unique_id=878887162]
 script = ExtResource("1_imks0")
 
@@ -225,6 +230,9 @@ position = Vector2(8636, 1932)
 [node name="enemy_spawn_timer" type="Timer" parent="." unique_id=1453616420]
 wait_time = 4.0
 autostart = true
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=209556755]
+navigation_polygon = SubResource("NavigationPolygon_3kso8")
 
 [connection signal="timeout" from="enemy_spawn_timer" to="." method="_on_enemy_spawn_timer_timeout"]
 [connection signal="timeout" from="enemy_spawn_timer" to="character" method="_on_enemy_spawn_timer_timeout"]

@@ -12,6 +12,8 @@ radius = 49.010204
 [node name="Enemy" type="CharacterBody2D" unique_id=372405923 groups=["Enemies"]]
 script = ExtResource("1_axcr2")
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=248025127]
+
 [node name="Area2D" type="Area2D" parent="." unique_id=1333466792 groups=["Enemies"]]
 collision_layer = 3
 collision_mask = 3
