@@ -4,6 +4,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 @export var player_prefab = preload("res://Prefab/player.tscn")
 @onready var spawn_position: Vector2 = global_position
+@onready var nav2d: NavigationAgent2D = $NavigationAgent2D
 var player = player_prefab.instantiate()
 
 func respawn():
@@ -14,14 +15,8 @@ func respawn():
 
 
 func _physics_process(delta: float) -> void:
-	if player == null:
-		print("no player")
-		return
-	#Where is the player
-	var direction = (player.position - position).normalized()
-	velocity = direction * SPEED
-	move_and_slide()
-			
+	nav2d.target_position = player.position()
+	
 	# Loop through all solid contacts from move_and_slide()
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
@@ -34,3 +29,11 @@ func _physics_process(delta: float) -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Player"):
 		respawn()
+
+func navigate(delta: float) -> void:
+	if nav2d.is_navigation_finished():
+		return
+	var next_path_position: Vector2 = nav2d.get_next_path_position()
+	var new_velocity: Vector2 = (
+		global_position.direction_to(next_path_position) * SPEED
+	)

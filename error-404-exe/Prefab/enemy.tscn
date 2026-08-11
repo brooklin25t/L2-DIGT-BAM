@@ -13,6 +13,7 @@ radius = 49.010204
 script = ExtResource("1_axcr2")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=248025127]
+debug_enabled = true
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1333466792 groups=["Enemies"]]
 collision_layer = 3
@@ -31,4 +32,5 @@ texture = ExtResource("2_axcr2")
 position = Vector2(-3, -8)
 shape = SubResource("CircleShape2D_50k3d")
 
+[connection signal="navigation_finished" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_navigation_finished"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
