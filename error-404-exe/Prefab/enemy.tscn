@@ -11,7 +11,6 @@ radius = 49.010204
 
 [node name="Enemy" type="CharacterBody2D" unique_id=372405923 groups=["Enemies"]]
 script = ExtResource("1_axcr2")
-player_prefab = null
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=248025127]
 debug_enabled = true

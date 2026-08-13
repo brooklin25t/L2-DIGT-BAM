@@ -15,8 +15,7 @@ func respawn():
 
 
 func _physics_process(delta: float) -> void:
-	var direction = 
-	nav2d.target_position = direction
+	
 	
 	# Loop through all solid contacts from move_and_slide()
 	for i in get_slide_collision_count():
@@ -30,6 +29,10 @@ func _physics_process(delta: float) -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Player"):
 		respawn()
+
+func navigation() -> void:
+	var direction = (player.position - position).normalized()
+	nav2d.target_position = direction
 
 func navigate(delta: float) -> void:
 	if nav2d.is_navigation_finished():
