@@ -2,19 +2,34 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
-@export var player_prefab = preload("res://Prefab/player.tscn")
-@onready var spawn_position: Vector2 = global_position
+@onready var player_prefab = preload("res://Prefab/player.tscn")
+#@onready var spawn_position: Vector2 = global_position
 @onready var nav2d: NavigationAgent2D = $NavigationAgent2D
-var player = player_prefab.instantiate()
 
-func respawn():
+
+#func respawn():
 	# Reset the player's position back to the spawn
-	global_position = spawn_position
+	#global_position = spawn_position
 	# Optional: Reset velocity to zero so the player doesn't keep falling/sliding
-	velocity = Vector2.ZERO 
+	#velocity = Vector2.ZERO 
+	
+	
 
 
 func _physics_process(delta: float) -> void:
+	var player = player_prefab.instantiate()
+	var player_position: Vector2 = player.global_position
+	if not player:
+		print("help")
+		return
+	nav2d.target_position = player.global_position
+	if nav2d.is_navigation_finished():
+		velocity = Vector2.ZERO
+		return
+	var current_agent_position: Vector2 = player.global_position
+	var next_path_position: Vector2 = nav2d.get_next_path_position()
+	var direction: Vector2 = current_agent_position.direction_to(next_path_position)
+	velocity = direction * SPEED
 	
 	
 	# Loop through all solid contacts from move_and_slide()
@@ -26,18 +41,6 @@ func _physics_process(delta: float) -> void:
 			player.respawn()
 
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.is_in_group("Player"):
-		respawn()
-
-func navigation() -> void:
-	var direction = (player.position - position).normalized()
-	nav2d.target_position = direction
-
-func navigate(delta: float) -> void:
-	if nav2d.is_navigation_finished():
-		return
-	var next_path_position: Vector2 = nav2d.get_next_path_position()
-	var new_velocity: Vector2 = (
-		global_position.direction_to(next_path_position) * SPEED
-	)
+#func _on_area_2d_area_entered(area: Area2D) -> void:
+	#if area.is_in_group("Player"):
+		#respawn()

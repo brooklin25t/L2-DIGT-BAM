@@ -8,9 +8,10 @@ const DASHSPEED = 700.0
 var dash_time: bool = false
 var is_dashing: bool = false
 var dash_direction: Vector2 = Vector2.ZERO
+@export var player: CharacterBody2D
 
 # Save the starting position when the game loads
-@onready var spawn_position: Vector2 = global_position
+@onready var spawn_position = global_position
 # dash cooldown timer and the dash time
 @onready var dash_timer: Timer = $DashTimer
 @onready var dash_cooldown: Timer = $DashCooldownTimer
@@ -21,7 +22,7 @@ func respawn():
 	# Reset the player's position back to the spawn
 	global_position = spawn_position
 	# Optional: Reset velocity to zero so the player doesn't keep falling/sliding
-	velocity = Vector2.ZERO 
+	velocity = Vector2.ZERO
 
 
 
@@ -59,7 +60,7 @@ func _physics_process(delta: float) -> void:
 
 	# 2. Check for collisions directly! No Area2D or signals required.
 	check_enemy_collisions()
-
+#
 
 func check_enemy_collisions():
 	for i in get_slide_collision_count():
