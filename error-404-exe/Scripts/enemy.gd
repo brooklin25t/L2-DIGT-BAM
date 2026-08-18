@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
-
 const SPEED = 300.0
 @onready var player_prefab = preload("res://Prefab/player.tscn")
 @onready var spawn_position: Vector2 = global_position
 @onready var nav2d: NavigationAgent2D = $NavigationAgent2D
 var player: CharacterBody2D
+signal enemy_delete
 
 func respawn():
 	#Reset the player's position back to the spawn
@@ -42,4 +42,4 @@ func _physics_process(delta: float) -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Player"):
-		respawn()
+		enemy_delete.emit()
