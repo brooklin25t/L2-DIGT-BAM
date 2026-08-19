@@ -18,7 +18,3 @@ func _on_enemy_spawn_timer_timeout() -> void:
 	var enemy = enemy_prefab.instantiate()
 	enemy.position = Vector2(127,-354)
 	add_child(enemy)
-
-func _on_enemy_delete():
-	queue_free()
-	print("working")
