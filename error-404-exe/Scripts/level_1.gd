@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 
 func _on_enemy_spawn_timer_timeout() -> void:
 	var enemy = enemy_prefab.instantiate()
-	enemy.position = Vector2(3272,-640)
+	enemy.position = Vector2(2600,768)
 	add_child(enemy)
 
 
