@@ -3,6 +3,7 @@ extends Node2D
 @onready var enemy_prefab = preload("res://Prefab/enemy.tscn")
 var delete: CharacterBody2D
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -16,7 +17,7 @@ func _process(delta: float) -> void:
 
 func _on_enemy_spawn_timer_timeout() -> void:
 	var enemy = enemy_prefab.instantiate()
-	enemy.position = Vector2(2600,768)
+	enemy.position = Vector2(3248,-600)
 	add_child(enemy)
 
 
