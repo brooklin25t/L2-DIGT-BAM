@@ -14,6 +14,7 @@ func respawn():
 	velocity = Vector2.ZERO 
 
 func _ready() -> void:
+	await get_tree().physics_frame
 	player = get_tree().get_first_node_in_group("Target")
 
 
@@ -21,10 +22,12 @@ func _physics_process(delta: float) -> void:
 	if not player:
 		print("help")
 		return
-	nav2d.target_position = player.global_position
+	if player != null:
+		nav2d.target_position = player.global_position
 	if nav2d.is_navigation_finished():
 		velocity = Vector2.ZERO
 		move_and_slide()
+		return
 	var current_agent_position: Vector2 = global_position
 	var next_path_position: Vector2 = nav2d.get_next_path_position()
 	var direction: Vector2 = current_agent_position.direction_to(next_path_position)

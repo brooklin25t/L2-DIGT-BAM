@@ -13,14 +13,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
-
-func _on_enemy_spawn_timer_timeout() -> void:
-	var enemy = enemy_prefab.instantiate()
-	enemy.position = Vector2(3248,-600)
-	add_child(enemy)
-
-
 func _on_enemy_spawn_timer_2_timeout() -> void:
 	var enemy = enemy_prefab.instantiate()
 	enemy.position = Vector2(-752,1680)
@@ -31,3 +23,12 @@ func _on_enemy_spawn_timer_3_timeout() -> void:
 	var enemy = enemy_prefab.instantiate()
 	enemy.position = Vector2(3040,4288)
 	add_child(enemy)
+
+
+func _on_enemy_spawn_timer_timeout() -> void:
+	var enemy = enemy_prefab.instantiate()
+	enemy.global_position = Vector2(3248, -600)
+	add_child(enemy)
+
+#func _on_enemy_delete():
+	#queue_free()

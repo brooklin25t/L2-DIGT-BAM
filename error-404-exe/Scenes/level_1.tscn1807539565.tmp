@@ -252,13 +252,13 @@ autostart = true
 wait_time = 4.0
 autostart = true
 
+[node name="Enemy" parent="." unique_id=372405923 instance=ExtResource("21_imks0")]
+position = Vector2(3248, -600)
+
 [node name="Portal" parent="." unique_id=816684105 instance=ExtResource("20_6ssoq")]
 position = Vector2(6504, 2000)
 
 [node name="nav_reg" type="Node2D" parent="." unique_id=1904979665]
-
-[node name="Enemy" parent="nav_reg" unique_id=372405923 instance=ExtResource("21_imks0")]
-position = Vector2(3248, -600)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="nav_reg" unique_id=1601757923]
 navigation_polygon = SubResource("NavigationPolygon_yltlr")
