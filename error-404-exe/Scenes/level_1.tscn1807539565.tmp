@@ -252,13 +252,13 @@ autostart = true
 wait_time = 4.0
 autostart = true
 
+[node name="Enemy" parent="." unique_id=372405923 instance=ExtResource("21_imks0")]
+position = Vector2(3248, -600)
+
 [node name="Portal" parent="." unique_id=816684105 instance=ExtResource("20_6ssoq")]
 position = Vector2(6504, 2000)
 
 [node name="nav_reg" type="Node2D" parent="." unique_id=1904979665]
-
-[node name="Enemy" parent="nav_reg" unique_id=372405923 instance=ExtResource("21_imks0")]
-position = Vector2(3248, -600)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="nav_reg" unique_id=1601757923]
 navigation_polygon = SubResource("NavigationPolygon_yltlr")
@@ -367,9 +367,9 @@ polygon = PackedVector2Array(1344, 768, 1408, 704, 1856, 704, 1920, 768, 1984, 9
 
 [connection signal="timeout" from="enemy_spawn_timer" to="." method="_on_enemy_spawn_timer_timeout"]
 [connection signal="timeout" from="enemy_spawn_timer" to="character" method="_on_enemy_spawn_timer_timeout"]
-[connection signal="timeout" from="enemy_spawn_timer2" to="." method="_on_enemy_spawn_timer_timeout"]
 [connection signal="timeout" from="enemy_spawn_timer2" to="." method="_on_enemy_spawn_timer_2_timeout"]
+[connection signal="timeout" from="enemy_spawn_timer2" to="." method="_on_enemy_spawn_timer_timeout"]
 [connection signal="timeout" from="enemy_spawn_timer2" to="character" method="_on_enemy_spawn_timer_timeout"]
-[connection signal="timeout" from="enemy_spawn_timer3" to="." method="_on_enemy_spawn_timer_timeout"]
 [connection signal="timeout" from="enemy_spawn_timer3" to="." method="_on_enemy_spawn_timer_3_timeout"]
+[connection signal="timeout" from="enemy_spawn_timer3" to="." method="_on_enemy_spawn_timer_timeout"]
 [connection signal="timeout" from="enemy_spawn_timer3" to="character" method="_on_enemy_spawn_timer_timeout"]
