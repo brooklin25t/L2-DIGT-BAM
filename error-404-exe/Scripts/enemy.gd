@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
+const SPEED = 330.0
 @onready var player_prefab = preload("res://Prefab/player.tscn")
 @onready var spawn_position: Vector2 = global_position
 @onready var nav2d: NavigationAgent2D = $NavigationAgent2D

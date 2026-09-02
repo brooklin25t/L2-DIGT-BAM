@@ -70,7 +70,7 @@ func check_enemy_collisions():
 		
 		# If the object we bumped into is in the "Enemies" group
 		if collider and collider.is_in_group("Enemies"):
-			respawn()
+			get_tree().change_scene_to_file("res://Scenes/death_scene.tscn")
 			break
 
 
@@ -86,4 +86,4 @@ func _on_dash_cooldown_timer_timeout() -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Enemies"):
-		respawn()
+		get_tree().change_scene_to_file("res://Scenes/death_scene.tscn")
