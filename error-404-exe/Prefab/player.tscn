@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cs5d5po13a7u7"]
 
 [ext_resource type="Script" uid="uid://b2ehruxvdiul5" path="res://Scripts/player.gd" id="1_mkbva"]
-[ext_resource type="Texture2D" uid="uid://cy7bagm4nsi5x" path="res://Temp Sprites/player_placeholder.png" id="2_mkbva"]
+[ext_resource type="Texture2D" uid="uid://cqwbrkyc2fjcd" path="res://Sprites/Idle 2.png" id="2_ohvtk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ryixy"]
 radius = 19.0
@@ -11,13 +11,28 @@ height = 64.0
 radius = 19.0
 height = 64.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_gh5aj"]
+atlas = ExtResource("2_ohvtk")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mako7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gh5aj")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}]
+
 [node name="Player" type="CharacterBody2D" unique_id=1002642745 groups=["Player", "Target"]]
 script = ExtResource("1_mkbva")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1724051773]
-position = Vector2(0.031252146, 0.031252146)
-scale = Vector2(0.125, 0.125)
-texture = ExtResource("2_mkbva")
+position = Vector2(-9.536743e-07, 0.06250286)
+scale = Vector2(0.9375, 0.9375)
+texture = ExtResource("2_ohvtk")
 
 [node name="Physics" type="CollisionShape2D" parent="." unique_id=1814544759]
 shape = SubResource("CapsuleShape2D_ryixy")
@@ -30,7 +45,7 @@ collision_mask = 3
 shape = SubResource("CapsuleShape2D_mako7")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=361214871]
-zoom = Vector2(0.25, 0.25)
+zoom = Vector2(2, 2)
 
 [node name="DashTimer" type="Timer" parent="." unique_id=1015700200]
 wait_time = 0.5
@@ -39,6 +54,12 @@ one_shot = true
 [node name="DashCooldownTimer" type="Timer" parent="." unique_id=773645482]
 wait_time = 3.0
 one_shot = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1251328034]
+position = Vector2(-0.5, -0.5)
+scale = Vector2(0.953125, 0.953125)
+sprite_frames = SubResource("SpriteFrames_mako7")
+animation = &"Idle"
 
 [connection signal="area_entered" from="character" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
