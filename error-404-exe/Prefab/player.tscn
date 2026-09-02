@@ -1,7 +1,15 @@
 [gd_scene format=3 uid="uid://cs5d5po13a7u7"]
 
 [ext_resource type="Script" uid="uid://b2ehruxvdiul5" path="res://Scripts/player.gd" id="1_mkbva"]
-[ext_resource type="Texture2D" uid="uid://cqwbrkyc2fjcd" path="res://Sprites/Idle 2.png" id="2_ohvtk"]
+[ext_resource type="Texture2D" path="res://Sprites/Idle 2.png" id="2_ohvtk"]
+[ext_resource type="Texture2D" uid="uid://57mg8epwoput" path="res://Sprites/Idle_L_1_png-removebg-preview.png" id="3_ty16k"]
+[ext_resource type="Texture2D" uid="uid://crcbwpblsaw55" path="res://Sprites/Idle_L_2-removebg-preview.png" id="4_1k2bi"]
+[ext_resource type="Texture2D" uid="uid://ca4ne67efila" path="res://Sprites/_walk_R_1-removebg-preview.png" id="5_i32cl"]
+[ext_resource type="Texture2D" uid="uid://iroub448i2k2" path="res://Sprites/Idle_R_2-removebg-preview.png" id="6_wyp7x"]
+[ext_resource type="Texture2D" uid="uid://dedtgria3gpb7" path="res://Sprites/_walk_R_1png-removebg-preview.png" id="7_0r8a8"]
+[ext_resource type="Texture2D" uid="uid://bo3h04pdpoboc" path="res://Sprites/_walk_R_2-removebg-preview.png" id="8_l2bej"]
+[ext_resource type="Texture2D" uid="uid://d1t4qxf4jyean" path="res://Sprites/_walk_L_1-removebg-preview.png" id="9_ui8k8"]
+[ext_resource type="Texture2D" uid="uid://bmo7flh0be3pw" path="res://Sprites/_walk_L_2-removebg-preview.png" id="10_v383j"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ryixy"]
 radius = 19.0
@@ -11,18 +19,82 @@ height = 64.0
 radius = 19.0
 height = 64.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gh5aj"]
-atlas = ExtResource("2_ohvtk")
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6hbp"]
+atlas = ExtResource("3_ty16k")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pftp3"]
+atlas = ExtResource("4_1k2bi")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h520n"]
+atlas = ExtResource("5_i32cl")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3jog"]
+atlas = ExtResource("6_wyp7x")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fu6xk"]
+atlas = ExtResource("7_0r8a8")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dcbk"]
+atlas = ExtResource("8_l2bej")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehjad"]
+atlas = ExtResource("9_ui8k8")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swjpk"]
+atlas = ExtResource("10_v383j")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mako7"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gh5aj")
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_w6hbp")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_pftp3")
 }],
 "loop": 1,
-"name": &"Idle",
+"name": &"Idle L",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_h520n")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_m3jog")
+}],
+"loop": 1,
+"name": &"Idle R",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_fu6xk")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_7dcbk")
+}],
+"loop": 1,
+"name": &"Walking R",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_ehjad")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_swjpk")
+}],
+"loop": 1,
+"name": &"Walkings L",
 "speed": 5.0
 }]
 
@@ -30,6 +102,7 @@ animations = [{
 script = ExtResource("1_mkbva")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1724051773]
+visible = false
 position = Vector2(-9.536743e-07, 0.06250286)
 scale = Vector2(0.9375, 0.9375)
 texture = ExtResource("2_ohvtk")
@@ -45,7 +118,6 @@ collision_mask = 3
 shape = SubResource("CapsuleShape2D_mako7")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=361214871]
-zoom = Vector2(2, 2)
 
 [node name="DashTimer" type="Timer" parent="." unique_id=1015700200]
 wait_time = 0.5
@@ -59,7 +131,8 @@ one_shot = true
 position = Vector2(-0.5, -0.5)
 scale = Vector2(0.953125, 0.953125)
 sprite_frames = SubResource("SpriteFrames_mako7")
-animation = &"Idle"
+animation = &"Walking R"
+frame_progress = 0.13117842
 
 [connection signal="area_entered" from="character" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]

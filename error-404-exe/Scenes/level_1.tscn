@@ -241,14 +241,14 @@ text = "For now you are not
 able to kill enimes"
 
 [node name="enemy_spawn_timer" type="Timer" parent="." unique_id=1453616420]
-wait_time = 0.1
+wait_time = 5.0
 
 [node name="enemy_spawn_timer2" type="Timer" parent="." unique_id=1163518338]
-wait_time = 0.1
+wait_time = 5.0
 autostart = true
 
 [node name="enemy_spawn_timer3" type="Timer" parent="." unique_id=1915481377]
-wait_time = 0.001
+wait_time = 5.0
 autostart = true
 
 [node name="Portal" parent="." unique_id=816684105 instance=ExtResource("20_6ssoq")]
@@ -366,9 +366,9 @@ polygon = PackedVector2Array(1344, 768, 1408, 704, 1856, 704, 1920, 768, 1984, 9
 
 [connection signal="timeout" from="enemy_spawn_timer" to="." method="_on_enemy_spawn_timer_timeout"]
 [connection signal="timeout" from="enemy_spawn_timer" to="character" method="_on_enemy_spawn_timer_timeout"]
-[connection signal="timeout" from="enemy_spawn_timer2" to="." method="_on_enemy_spawn_timer_2_timeout"]
 [connection signal="timeout" from="enemy_spawn_timer2" to="." method="_on_enemy_spawn_timer_timeout"]
+[connection signal="timeout" from="enemy_spawn_timer2" to="." method="_on_enemy_spawn_timer_2_timeout"]
 [connection signal="timeout" from="enemy_spawn_timer2" to="character" method="_on_enemy_spawn_timer_timeout"]
-[connection signal="timeout" from="enemy_spawn_timer3" to="." method="_on_enemy_spawn_timer_3_timeout"]
 [connection signal="timeout" from="enemy_spawn_timer3" to="." method="_on_enemy_spawn_timer_timeout"]
+[connection signal="timeout" from="enemy_spawn_timer3" to="." method="_on_enemy_spawn_timer_3_timeout"]
 [connection signal="timeout" from="enemy_spawn_timer3" to="character" method="_on_enemy_spawn_timer_timeout"]
