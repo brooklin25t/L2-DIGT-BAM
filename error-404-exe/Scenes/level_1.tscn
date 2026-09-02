@@ -20,107 +20,106 @@
 [ext_resource type="Texture2D" uid="uid://dt41u5fpm54ho" path="res://Temp Sprites/Untitled_Artwork 17.png" id="12_gcla0"]
 [ext_resource type="Texture2D" uid="uid://chhqq5a8hkjy2" path="res://Temp Sprites/Untitled_Artwork 18.png" id="13_vr6f4"]
 [ext_resource type="PackedScene" uid="uid://c17cuyysif6pp" path="res://Prefab/portal.tscn" id="20_6ssoq"]
-[ext_resource type="PackedScene" uid="uid://ce18ltn55c2g5" path="res://Prefab/enemy.tscn" id="21_imks0"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7p6j4"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ssoq"]
 texture = ExtResource("1_xfk5q")
 texture_region_size = Vector2i(64, 64)
 use_texture_padding = false
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u5cqy"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_imks0"]
 texture = ExtResource("2_oovug")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_6/polygon_0/points = PackedVector2Array(-25.401321, -32, 32, -32, 32, 8.46711, -25.965797, 7.9026337)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u0op5"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dlmop"]
 texture = ExtResource("3_8i23i")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_7/polygon_0/points = PackedVector2Array(25.401329, 8.46711, 25.965797, -32, 32, -32, 32, 32, -32, 32, -32, 8.46711)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1f27d"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sda17"]
 texture = ExtResource("4_8yhm2")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_7/polygon_0/points = PackedVector2Array(25.401329, 8.46711, 25.965797, -32, 32, -32, 32, 32, -32, 32, -32, 8.46711)
 0:0/0/physics_layer_8/polygon_0/points = PackedVector2Array(26.530273, -26.530273, 26.530273, 32, -32, 32, -32, -27.094746)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pm77i"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1fal7"]
 texture = ExtResource("5_pjppf")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_9/polygon_0/points = PackedVector2Array(-25.965797, -26.530273, 32, -27.094746, 32, 32, -25.965797, 32)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1fal7"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gcla0"]
 texture = ExtResource("6_6ssoq")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_10/polygon_0/points = PackedVector2Array(-32, -32, 26.259377, -32, 26.079515, -27.158669, 32, -26.446354, 32, 32, -32, 32)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gcla0"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vr6f4"]
 texture = ExtResource("7_imks0")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_11/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vr6f4"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u5cqy"]
 texture = ExtResource("8_dlmop")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_11/polygon_0/points = PackedVector2Array(-32, -27.094746, -25.719797, -26.978807, -25.899656, -32, 32, -32, 32, 32, -32, 32)
 0:0/0/physics_layer_12/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -26.259373, 32, -26.439232, 7.913784, -32, 7.913784)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vyomg"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u0op5"]
 texture = ExtResource("9_sda17")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_13/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 7.733925, 26.439234, 7.913784, 26.619093, 32, -32, 32)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xub2v"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1f27d"]
 texture = ExtResource("6_yltlr")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x5u8r"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pm77i"]
 texture = ExtResource("7_6ssoq")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nwpk5"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xub2v"]
 texture = ExtResource("8_imks0")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 11.965809, -1.6350784, 12.114452, -32, 12.263096)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lk3dh"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x5u8r"]
 texture = ExtResource("9_dlmop")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, 11.8539505, 32, 11.8539505, 32, 32, -32, 32)
 0:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-32, 8.46711, -10.611664, 8.46711, 32, 8.46711, 32, -32, -32, -32)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ts4pv"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nwpk5"]
 texture = ExtResource("10_sda17")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_2/polygon_0/points = PackedVector2Array(25.965797, -32, -32, -32, -32, 32, 25.965797, 32)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7sml1"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lk3dh"]
 texture = ExtResource("11_1fal7")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_2/polygon_0/points = PackedVector2Array(25.965797, -32, 32, -32, 32, 32, 25.965797, 32)
 0:0/0/physics_layer_3/polygon_0/points = PackedVector2Array(32, -32, -26.079517, -32, -26.079514, 32, 32, 32)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bd6hb"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ts4pv"]
 texture = ExtResource("12_gcla0")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_4/polygon_0/points = PackedVector2Array(-32, 32, 32, 32, 32, -27.094746, -32, -27.094746)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x68w5"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7sml1"]
 texture = ExtResource("13_vr6f4")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
@@ -142,43 +141,43 @@ physics_layer_10/collision_layer = 1
 physics_layer_11/collision_layer = 1
 physics_layer_12/collision_layer = 1
 physics_layer_13/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_7p6j4")
-sources/2 = SubResource("TileSetAtlasSource_xub2v")
-sources/3 = SubResource("TileSetAtlasSource_x5u8r")
-sources/4 = SubResource("TileSetAtlasSource_nwpk5")
-sources/5 = SubResource("TileSetAtlasSource_lk3dh")
-sources/6 = SubResource("TileSetAtlasSource_ts4pv")
-sources/7 = SubResource("TileSetAtlasSource_7sml1")
-sources/8 = SubResource("TileSetAtlasSource_bd6hb")
-sources/9 = SubResource("TileSetAtlasSource_x68w5")
-sources/10 = SubResource("TileSetAtlasSource_u5cqy")
-sources/11 = SubResource("TileSetAtlasSource_u0op5")
-sources/12 = SubResource("TileSetAtlasSource_1f27d")
-sources/13 = SubResource("TileSetAtlasSource_pm77i")
-sources/14 = SubResource("TileSetAtlasSource_1fal7")
-sources/15 = SubResource("TileSetAtlasSource_gcla0")
-sources/16 = SubResource("TileSetAtlasSource_vr6f4")
-sources/17 = SubResource("TileSetAtlasSource_vyomg")
+sources/0 = SubResource("TileSetAtlasSource_6ssoq")
+sources/2 = SubResource("TileSetAtlasSource_1f27d")
+sources/3 = SubResource("TileSetAtlasSource_pm77i")
+sources/4 = SubResource("TileSetAtlasSource_xub2v")
+sources/5 = SubResource("TileSetAtlasSource_x5u8r")
+sources/6 = SubResource("TileSetAtlasSource_nwpk5")
+sources/7 = SubResource("TileSetAtlasSource_lk3dh")
+sources/8 = SubResource("TileSetAtlasSource_ts4pv")
+sources/9 = SubResource("TileSetAtlasSource_7sml1")
+sources/10 = SubResource("TileSetAtlasSource_imks0")
+sources/11 = SubResource("TileSetAtlasSource_dlmop")
+sources/12 = SubResource("TileSetAtlasSource_sda17")
+sources/13 = SubResource("TileSetAtlasSource_1fal7")
+sources/14 = SubResource("TileSetAtlasSource_gcla0")
+sources/15 = SubResource("TileSetAtlasSource_vr6f4")
+sources/16 = SubResource("TileSetAtlasSource_u5cqy")
+sources/17 = SubResource("TileSetAtlasSource_u0op5")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_yltlr"]
-vertices = PackedVector2Array(1931.8516, 2704.4375, 2546.8828, 2730.3125, 2383, 3417.0625, 1828.3281, 3628, 1172, 3404.3594, 1172, 3127.7188, 1796.7188, 2772, 20, 1532, 20, 561.6094, 662.2031, 722.15625, 1257.0078, 1268.7422, 20, 1836, -884, 1836, -884, 1532, 1981.9688, 1200.7734, 2015.1406, 1197.6563, 2116.7031, 1846.0469, 1936.4375, 1291.8516, 1864.2813, 1364, 2132, 2504.2813, 1659.2813, 2772, 1524.1484, 2704.4375, 1096.2813, 3052, 1388, 2568.2813, 492, 3052, 20, 3628, 1931.8516, 2095.5625, 1591.7188, 1364, 2132, 2295.7188, 1806.8984, 2033.0938, 1740.3594, 1900, 1435.3203, 1252.0234, 1524.1563, 1296.4375, 1463.7188, 1900, 1388, 1975.7188, 492, 3468.3594, 1035.8438, 3472.4375, 968.28125, 3540, 635.28125, 3540)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6), PackedInt32Array(7, 8, 9, 10), PackedInt32Array(11, 12, 13, 7), PackedInt32Array(14, 15, 16, 17), PackedInt32Array(18, 17, 16), PackedInt32Array(11, 7, 10), PackedInt32Array(0, 19, 1), PackedInt32Array(20, 6, 5), PackedInt32Array(21, 20, 5, 22), PackedInt32Array(23, 21, 22, 24), PackedInt32Array(25, 11, 10, 24), PackedInt32Array(26, 27, 18, 16, 28), PackedInt32Array(1, 19, 28), PackedInt32Array(16, 1, 28), PackedInt32Array(27, 26, 29, 30), PackedInt32Array(31, 32, 27, 30, 33, 10), PackedInt32Array(34, 23, 24, 10), PackedInt32Array(10, 33, 34), PackedInt32Array(25, 24, 35), PackedInt32Array(36, 4, 3, 37), PackedInt32Array(37, 3, 25, 38), PackedInt32Array(25, 35, 38)])
+vertices = PackedVector2Array(1943.6875, 2720.8672, 2525.7734, 2732.6328, 2366, 3402.1328, 1824.6406, 3608, 1192, 3416.7188, 1192, 3119.4297, 1801.4375, 2792, 40, 1552, 40, 587.22656, 652.4297, 740.34375, 1250.0313, 1289.4922, 40, 1816, -864, 1816, -864, 1552, 1994.8906, 1219.6484, 1998.2891, 1219.3281, 2097.4063, 1852.1094, 1952.8672, 1303.6875, 1872.5703, 1384, 2152, 2512.5703, 1654.5625, 2792, 1512.3125, 2720.8672, 1104.5703, 3032, 1368, 2576.5703, 472, 3032, 40, 3608, 1583.4297, 1384, 1943.6875, 2079.1328, 1821.8125, 2018.1797, 1752.7188, 1880, 1368, 1967.4297, 2152, 2287.4297, 1431.5, 1272.4688, 1512.3203, 1312.8828, 1455.4297, 1880, 472, 3480.7188, 1047.6719, 3488.8828, 976.5703, 3560, 630.5625, 3560)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6), PackedInt32Array(7, 8, 9, 10), PackedInt32Array(11, 12, 13, 7), PackedInt32Array(14, 15, 16, 17), PackedInt32Array(18, 17, 16), PackedInt32Array(11, 7, 10), PackedInt32Array(0, 19, 1), PackedInt32Array(20, 6, 5), PackedInt32Array(21, 20, 5, 22), PackedInt32Array(23, 21, 22, 24), PackedInt32Array(25, 11, 10, 24), PackedInt32Array(26, 18, 16, 27, 28, 29), PackedInt32Array(30, 23, 24, 10), PackedInt32Array(1, 19, 31), PackedInt32Array(16, 1, 31), PackedInt32Array(16, 31, 27), PackedInt32Array(32, 33, 26, 29, 34, 10), PackedInt32Array(10, 34, 30), PackedInt32Array(25, 24, 35), PackedInt32Array(36, 4, 3, 37), PackedInt32Array(37, 3, 25, 38), PackedInt32Array(25, 35, 38)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-904, 1512, 0, 1512, 0, 536, 672, 704, 1264, 1248, 2032, 1176, 2136, 1840, 2568, 2728, 2400, 3432, 1832, 3648, 0, 3648, 0, 1856, -904, 1856)])
 border_size = 134.0
-agent_radius = 20.0
+agent_radius = 40.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_3kso8"]
-vertices = PackedVector2Array(4222.1094, 1238.5781, 3540, 1582.4922, 3540, 1335.7188, 2796, 1079.7188, 2796, 1568.8906, 2521.6016, 1486, 2004, 1059.7266, 2004, 956.75, 5016.4766, 4, 5092.289, 300, 4727.7188, 300, 3380, 4, 4654.5234, 373.20313, 4588, 776.28125, 4728.2266, 916.5078, 3467.8516, 1263.5625, 4588, 572.75, 3279.539, 1139.2578, 3146.7031, 940, 3092.211, 4, 3084.211, -772, 3380, -772, 3339.8281, 1199.5469, 1950.6172, 152.25, 2403.211, 4, 2935.7188, 940, 1750.2266, 599.28906, 1864.2813, 684, 1937.4766, 757.2031, 1794.7969, 684)
+vertices = PackedVector2Array(4212.1797, 1221.1797, 3560, 1550.0078, 3560, 1327.4297, 2776, 1071.4297, 2776, 1541.9609, 2531.2422, 1468.0234, 2024, 1050.2813, 2024, 953.5078, 5000.953, 24, 5066.5234, 280, 4719.4297, 280, 3360, 24, 4637.039, 362.39063, 4568, 784.5703, 4696.453, 913.0078, 3479.6875, 1247.1328, 4568, 569.5078, 3295.1016, 1126.5391, 3157.4063, 920, 3112.4063, 24, 3104.4219, -752, 3360, -752, 3351.6719, 1183.1094, 1965.2578, 168.5, 2406.3828, 24, 2927.4297, 920, 1772.4609, 598.59375, 1872.5703, 664, 1954.9609, 746.3906, 1806.8828, 664)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 6, 7), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(11, 10, 12), PackedInt32Array(11, 13, 14, 0, 2, 15), PackedInt32Array(11, 12, 16), PackedInt32Array(17, 18, 19, 20, 21, 11, 22), PackedInt32Array(11, 16, 13), PackedInt32Array(11, 15, 22), PackedInt32Array(23, 24, 19, 18, 25, 26), PackedInt32Array(26, 25, 3, 27), PackedInt32Array(3, 7, 28), PackedInt32Array(27, 29, 26), PackedInt32Array(27, 3, 28)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(3064, -792, 3400, -792, 3400, -16, 5032, -16, 5200, 640, 4232, 1256, 3280, 1736, 2512, 1504, 1968, 1056, 1728, 600, 1936, 136, 2400, -16, 3072, -16)])
-agent_radius = 20.0
+agent_radius = 40.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_imks0"]
-vertices = PackedVector2Array(4145.0313, 1553.8984, 4703.367, 1220.3438, 4588, 1335.7188, 4866.461, 1196, 4744.117, 1196, 5378.9375, 816.7578, 5076, 2824.2813, 6160.4297, 2667.4375, 5662.3984, 3268.2422, 5130.2188, 1261.9375, 4588, 1672.2813, 2420.461, 3514.3984, 2576.7266, 3181.0078, 2612.1484, 3216.4375, 2900.1563, 3632.3594, 2747.2813, 3284, 3336.2813, 3284, 2810.4297, 2860.7734, 2653.3203, 2900.039, 2659.8672, 2331.1563, 5076, 2487.7188, 3004.75, 2796, 3183.3438, 2004, 3203.25, 2796, 3404.3594, 2004, 3171.789, 3636, 3179.789, 4396, 2892.211, 4396, 3858.6563, 3636, 3412, 3208.2813, 5779.5, 531.75, 6069.6016, 928.72656, 3412, 2865.5781, 5008.4375, 2891.8438, 4945.8906, 3016.9375, 4880.4375, 3147.8516, 5204, 1335.7188, 6155.8984, 1258.2109, 6139.828, 1667.8516, 5204, 1602.4609, 5135.617, 1876, 6355.0938, 2154.1719, 6277.4063, 2519.2578, 4939.8516, 2351.5625, 4791.7188, 1876, 4676.7188, 2220, 4119.867, 3485.6016, 4343.7188, 2220, 3493.3281, 1826.0313, 4204, 2359.7188, 3473.8906, 1864.9375, 4204, 2820.7188, 4271.5625, 2955.8516, 4468.1484, 3152.4375, 4724.633, 3292.0781, 4603.2813, 3220, 4808.2813, 3220)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5), PackedInt32Array(6, 7, 8), PackedInt32Array(9, 3, 5), PackedInt32Array(0, 2, 10), PackedInt32Array(11, 12, 13), PackedInt32Array(14, 11, 13), PackedInt32Array(14, 13, 15), PackedInt32Array(14, 15, 16), PackedInt32Array(17, 18, 19), PackedInt32Array(7, 6, 20), PackedInt32Array(21, 17, 19), PackedInt32Array(21, 19, 22), PackedInt32Array(23, 21, 22), PackedInt32Array(23, 22, 24), PackedInt32Array(25, 26, 27), PackedInt32Array(25, 27, 14), PackedInt32Array(25, 14, 16), PackedInt32Array(28, 25, 16), PackedInt32Array(28, 16, 29), PackedInt32Array(5, 30, 31), PackedInt32Array(32, 23, 24), PackedInt32Array(33, 6, 8), PackedInt32Array(34, 33, 8), PackedInt32Array(35, 34, 8), PackedInt32Array(36, 9, 5), PackedInt32Array(36, 5, 31), PackedInt32Array(36, 31, 37), PackedInt32Array(36, 37, 38), PackedInt32Array(39, 36, 38), PackedInt32Array(40, 39, 38), PackedInt32Array(40, 38, 41), PackedInt32Array(40, 41, 42), PackedInt32Array(40, 42, 7), PackedInt32Array(40, 7, 20), PackedInt32Array(40, 20, 43), PackedInt32Array(44, 40, 43), PackedInt32Array(44, 43, 45), PackedInt32Array(46, 28, 29), PackedInt32Array(44, 45, 47), PackedInt32Array(10, 44, 47), PackedInt32Array(0, 10, 47), PackedInt32Array(48, 0, 47), PackedInt32Array(48, 47, 49), PackedInt32Array(50, 48, 49), PackedInt32Array(24, 50, 49), PackedInt32Array(32, 24, 49), PackedInt32Array(32, 49, 51), PackedInt32Array(29, 32, 51), PackedInt32Array(46, 29, 51), PackedInt32Array(46, 51, 52), PackedInt32Array(46, 52, 53), PackedInt32Array(54, 46, 53), PackedInt32Array(54, 53, 55), PackedInt32Array(54, 55, 56), PackedInt32Array(8, 54, 56), PackedInt32Array(8, 56, 35)])
+vertices = PackedVector2Array(4154.0625, 1571.8125, 4575.2188, 1320.2031, 4568, 1327.4297, 4868.922, 1176, 4816.6094, 1176, 5389.8906, 833.52344, 5096, 2832.5703, 6144.8594, 2654.8672, 5652.797, 3248.4688, 5140.453, 1243.8828, 4568, 1680.5703, 2448.9219, 3500.7969, 2582.7422, 3215.2969, 2600.3125, 3232.8672, 2920.3281, 3616.7266, 2742.5625, 3304, 3344.5703, 3304, 2804.8203, 2841.5469, 2673.6172, 2874.3438, 2679.7422, 2342.3203, 5096, 2479.4297, 3001.5078, 2776, 3189.0703, 2024, 3206.4922, 2776, 3416.7188, 2024, 3151.5781, 3616, 3159.5703, 4376, 2912.4219, 4376, 3853.3125, 3616, 3432, 3216.5703, 5775, 559.4922, 6051.2266, 937.4922, 3432, 2851.1719, 5024.883, 2903.6719, 4963.7813, 3025.8906, 4896.867, 3159.6875, 5224, 1327.4297, 6135.789, 1260.3516, 6119.672, 1671.7031, 5224, 1604.9219, 5151.2266, 1896, 6334.1797, 2156.3516, 6258.8203, 2510.5234, 4951.6875, 2335.1328, 4783.4297, 1896, 4681.4375, 2200, 4111.742, 3467.2031, 4335.4297, 2200, 3507.8984, 1841.6094, 4184, 2351.4297, 3491.7813, 1873.8906, 4184, 2825.4375, 4255.133, 2967.6875, 4456.3125, 3168.8672, 4598.5625, 3240, 4721.258, 3272.1563, 4816.5703, 3240)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5), PackedInt32Array(6, 7, 8), PackedInt32Array(9, 3, 5), PackedInt32Array(0, 2, 10), PackedInt32Array(11, 12, 13), PackedInt32Array(14, 11, 13), PackedInt32Array(14, 13, 15), PackedInt32Array(14, 15, 16), PackedInt32Array(17, 18, 19), PackedInt32Array(7, 6, 20), PackedInt32Array(21, 17, 19), PackedInt32Array(21, 19, 22), PackedInt32Array(23, 21, 22), PackedInt32Array(23, 22, 24), PackedInt32Array(25, 26, 27), PackedInt32Array(25, 27, 14), PackedInt32Array(25, 14, 16), PackedInt32Array(28, 25, 16), PackedInt32Array(28, 16, 29), PackedInt32Array(5, 30, 31), PackedInt32Array(32, 23, 24), PackedInt32Array(33, 6, 8), PackedInt32Array(34, 33, 8), PackedInt32Array(35, 34, 8), PackedInt32Array(36, 9, 5), PackedInt32Array(36, 5, 31), PackedInt32Array(36, 31, 37), PackedInt32Array(36, 37, 38), PackedInt32Array(39, 36, 38), PackedInt32Array(40, 39, 38), PackedInt32Array(40, 38, 41), PackedInt32Array(40, 41, 42), PackedInt32Array(40, 42, 7), PackedInt32Array(40, 7, 20), PackedInt32Array(40, 20, 43), PackedInt32Array(44, 40, 43), PackedInt32Array(44, 43, 45), PackedInt32Array(46, 28, 29), PackedInt32Array(44, 45, 47), PackedInt32Array(10, 44, 47), PackedInt32Array(0, 10, 47), PackedInt32Array(48, 0, 47), PackedInt32Array(48, 47, 49), PackedInt32Array(50, 48, 49), PackedInt32Array(24, 50, 49), PackedInt32Array(32, 24, 49), PackedInt32Array(32, 49, 51), PackedInt32Array(29, 32, 51), PackedInt32Array(46, 29, 51), PackedInt32Array(46, 51, 52), PackedInt32Array(46, 52, 53), PackedInt32Array(46, 53, 54), PackedInt32Array(55, 46, 54), PackedInt32Array(55, 54, 56), PackedInt32Array(8, 55, 56), PackedInt32Array(8, 56, 35)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(3200, 4416, 2872, 4416, 2880, 3648, 2392, 3528, 2632, 3016, 2640, 2320, 3408, 1840, 4136, 1536, 5368, 800, 5784, 504, 6088, 920, 6176, 1256, 6160, 1664, 6376, 2152, 6296, 2528, 6176, 2680, 5672, 3288, 4728, 3312, 4128, 3504, 3864, 3656, 3192, 3656)])
 sample_partition_type = 1
-agent_radius = 20.0
+agent_radius = 40.0
 
 [node name="Level 1" type="Node2D" unique_id=878887162]
 script = ExtResource("1_imks0")
@@ -261,9 +260,6 @@ autostart = true
 position = Vector2(6504, 2000)
 
 [node name="nav_reg" type="Node2D" parent="." unique_id=1904979665]
-
-[node name="Enemy" parent="nav_reg" unique_id=372405923 instance=ExtResource("21_imks0")]
-position = Vector2(3248, -600)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="nav_reg" unique_id=1601757923]
 navigation_polygon = SubResource("NavigationPolygon_yltlr")
