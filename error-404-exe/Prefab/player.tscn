@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cs5d5po13a7u7"]
 
 [ext_resource type="Script" uid="uid://b2ehruxvdiul5" path="res://Scripts/player.gd" id="1_mkbva"]
-[ext_resource type="Texture2D" path="res://Sprites/Idle 2.png" id="2_ohvtk"]
 [ext_resource type="Texture2D" uid="uid://57mg8epwoput" path="res://Sprites/Idle_L_1_png-removebg-preview.png" id="3_ty16k"]
 [ext_resource type="Texture2D" uid="uid://crcbwpblsaw55" path="res://Sprites/Idle_L_2-removebg-preview.png" id="4_1k2bi"]
 [ext_resource type="Texture2D" uid="uid://ca4ne67efila" path="res://Sprites/_walk_R_1-removebg-preview.png" id="5_i32cl"]
@@ -105,7 +104,6 @@ script = ExtResource("1_mkbva")
 visible = false
 position = Vector2(-9.536743e-07, 0.06250286)
 scale = Vector2(0.9375, 0.9375)
-texture = ExtResource("2_ohvtk")
 
 [node name="Physics" type="CollisionShape2D" parent="." unique_id=1814544759]
 shape = SubResource("CapsuleShape2D_ryixy")
@@ -131,8 +129,8 @@ one_shot = true
 position = Vector2(-0.5, -0.5)
 scale = Vector2(0.953125, 0.953125)
 sprite_frames = SubResource("SpriteFrames_mako7")
-animation = &"Walking R"
-frame_progress = 0.13117842
+animation = &"Idle R"
+frame_progress = 0.49832648
 
 [connection signal="area_entered" from="character" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]

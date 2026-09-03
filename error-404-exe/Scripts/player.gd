@@ -15,19 +15,17 @@ var dash_direction: Vector2 = Vector2.ZERO
 # dash cooldown timer and the dash time
 @onready var dash_timer: Timer = $DashTimer
 @onready var dash_cooldown: Timer = $DashCooldownTimer
+@onready var animated_sprite = $AnimatedSprite2D
 
+var last_facing_dir: float = 1.0 
 
 
 func respawn():
 	# Reset the player's position back to the spawn
 	global_position = spawn_position
-	# Optional: Reset velocity to zero so the player doesn't keep falling/sliding
+	#Reset velocity to zero so the player fall/slide
 	velocity = Vector2.ZERO
-
-
-
-
-		
+	
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -53,15 +51,39 @@ func _physics_process(delta: float) -> void:
 	else:
 		if direction != Vector2.ZERO:
 			velocity = direction * SPEED
+
 		else:
 			velocity = velocity.move_toward(Vector2.ZERO, SPEED)
+
 
 	# 1. Move the player
 	move_and_slide()
 
-	# 2. Check for collisions directly! No Area2D or signals required.
+	# 2. Check for collisions 
 	check_enemy_collisions()
-#
+
+	if direction.x > 0:
+		last_facing_dir = 1.0
+	elif direction.x < 0:
+		last_facing_dir = -1.0
+
+	# 2. Flips it horizontally based on the direction
+	if last_facing_dir == 1.0:
+		animated_sprite.flip_h = false  # Doesn't flip
+	else:
+		animated_sprite.flip_h = true   # Flips to face left
+
+	# 3. Plays based on state
+	if is_dashing:
+		#  dash animation 
+		animated_sprite.play("Walking R") 
+	elif direction != Vector2.ZERO:
+		# Plays walking if moving up, down, left, right, or diagonally
+		animated_sprite.play("Walking R") 
+	else:
+		# Plays idle when completely still
+		animated_sprite.play("Idle R")
+	
 
 func check_enemy_collisions():
 	for i in get_slide_collision_count():
@@ -77,7 +99,6 @@ func check_enemy_collisions():
 func _on_dash_timer_timeout() -> void:
 	is_dashing = false
 	
-
 
 
 func _on_dash_cooldown_timer_timeout() -> void:
