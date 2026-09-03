@@ -10,8 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://da4vp34xhp2rj" path="res://Temp Sprites/Untitled_Artwork 25.png" id="8_2awvy"]
 [ext_resource type="Texture2D" uid="uid://rgiee6adfj3r" path="res://Temp Sprites/Untitled_Artwork 26.png" id="9_nrv0r"]
 [ext_resource type="Texture2D" uid="uid://c6538lwd4gl8o" path="res://Temp Sprites/Untitled_Artwork 11.png" id="10_gmj2a"]
+[ext_resource type="Texture2D" uid="uid://be1c7x3xr5dqc" path="res://Temp Sprites/Untitled_Artwork 5.png" id="10_s80er"]
 [ext_resource type="Texture2D" uid="uid://chao7tyxfbowe" path="res://Temp Sprites/Untitled_Artwork 12.png" id="11_n8e0l"]
 [ext_resource type="Texture2D" uid="uid://q67mrrvwn72j" path="res://Temp Sprites/Untitled_Artwork 13.png" id="12_3oi3s"]
+[ext_resource type="Texture2D" uid="uid://cr655jhmgeorm" path="res://Temp Sprites/Untitled_Artwork 6.png" id="12_8jhox"]
 [ext_resource type="Texture2D" uid="uid://ciii0h0xnsyuw" path="res://Temp Sprites/Untitled_Artwork 14.png" id="13_rybab"]
 [ext_resource type="Texture2D" uid="uid://bh1t5iciwpnqr" path="res://Temp Sprites/Untitled_Artwork 15.png" id="14_g6bfm"]
 [ext_resource type="Texture2D" uid="uid://vds7jtw6dinw" path="res://Temp Sprites/Untitled_Artwork 16.png" id="15_ds67j"]
@@ -75,10 +77,50 @@ texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_13/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 7.733925, 26.439234, 7.913784, 26.619093, 32, -32, 32)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hed5s"]
+texture = ExtResource("10_s80er")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k0ktw"]
 texture = ExtResource("10_gmj2a")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yykrm"]
+texture = ExtResource("12_8jhox")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7n3gr"]
 texture = ExtResource("11_n8e0l")
@@ -156,6 +198,8 @@ sources/14 = SubResource("TileSetAtlasSource_5l2vs")
 sources/15 = SubResource("TileSetAtlasSource_8kdlr")
 sources/16 = SubResource("TileSetAtlasSource_r5kqc")
 sources/17 = SubResource("TileSetAtlasSource_7wq3m")
+sources/19 = SubResource("TileSetAtlasSource_hed5s")
+sources/20 = SubResource("TileSetAtlasSource_yykrm")
 
 [node name="level_3" type="Node2D" unique_id=1205261415]
 
