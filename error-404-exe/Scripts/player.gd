@@ -17,13 +17,15 @@ var dash_direction: Vector2 = Vector2.ZERO
 @onready var dash_cooldown: Timer = $DashCooldownTimer
 @onready var animated_sprite = $AnimatedSprite2D
 
-var last_facing_dir: float = 1.0 
+var last_facing_dir_x: float = 1.0 
+var last_facing_dir_y: float = 1.0 
+
 
 
 func respawn():
 	# Reset the player's position back to the spawn
 	global_position = spawn_position
-	#Reset velocity to zero so the player fall/slide
+	# Reset velocity to zero so the player fall/slide
 	velocity = Vector2.ZERO
 	
 func _physics_process(delta: float) -> void:
@@ -61,39 +63,40 @@ func _physics_process(delta: float) -> void:
 
 	# 2. Check for collisions 
 	check_enemy_collisions()
-
-	if direction.x > 0:
-		last_facing_dir = 1.0
-	elif direction.x < 0:
-		last_facing_dir = -1.0
-
-	# 2. Flips it horizontally based on the direction
-	if last_facing_dir == 1.0:
-		animated_sprite.flip_h = false  # Doesn't flip
-	else:
-		animated_sprite.flip_h = true   # Flips to face left
-
-	# 3. Plays based on state
-	if is_dashing:
-		#  dash animation 
-		animated_sprite.play("Walking R") 
-	elif direction != Vector2.ZERO:
-		# Plays walking if moving up, down, left, right, or diagonally
-		animated_sprite.play("Walking R") 
-	else:
-		# Plays idle when completely still
-		animated_sprite.play("Idle R")
 	
+# 1. Store last movement directions
+	if direction.y != 0:
+		last_facing_dir_y = sign(direction.y)
+	if direction.x != 0:
+		last_facing_dir_x = sign(direction.x)
 
+# 2. Update sprite flipping
+	animated_sprite.flip_v = (last_facing_dir_y == -1.0)
+	animated_sprite.flip_h = (last_facing_dir_x == -1.0)
+
+# 3. Handle animations
+	if is_dashing:
+		animated_sprite.play("Walking x.axis")
+	elif direction != Vector2.ZERO:
+	# Prioritize X movement over Y movement when moving diagonally
+		if direction.x != 0:
+			animated_sprite.play("Walking x.axis")
+		else:
+			animated_sprite.play("Walking y.axis")
+	else:
+		animated_sprite.play("Idle x.axis")
+
+
+# 3. Check for enemy collisions
 func check_enemy_collisions():
-	for i in get_slide_collision_count():
-		var collision = get_slide_collision(i)
-		var collider = collision.get_collider()
+		for i in get_slide_collision_count():
+			var collision = get_slide_collision(i)
+			var collider = collision.get_collider()
 		
-		# If the object we bumped into is in the "Enemies" group
-		if collider and collider.is_in_group("Enemies"):
-			respawn()
-			break
+			# If the object we bumped into is in the "Enemies" group
+			if collider and collider.is_in_group("Enemies"):
+				respawn()
+				break
 
 
 func _on_dash_timer_timeout() -> void:
@@ -104,7 +107,7 @@ func _on_dash_timer_timeout() -> void:
 func _on_dash_cooldown_timer_timeout() -> void:
 	dash_time = false
 
-
+# If collided body is in group enemies respawn
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Enemies"):
 		respawn()
