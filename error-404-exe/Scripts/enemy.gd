@@ -14,24 +14,32 @@ func respawn():
 	velocity = Vector2.ZERO 
 
 func _ready() -> void:
-	await get_tree().physics_frame
+	#makes the player the target
 	player = get_tree().get_first_node_in_group("Target")
 
 
 func _physics_process(delta: float) -> void:
+	#checks if the player is in the scene
 	if not player:
 		print("help")
 		return
+	#gets player position
 	if player != null:
 		nav2d.target_position = player.global_position
+	#checks if the navigation is finished and then sets speed to zreo
 	if nav2d.is_navigation_finished():
 		velocity = Vector2.ZERO
 		move_and_slide()
 		return
+	#where the enemy is
 	var current_agent_position: Vector2 = global_position
+	#finding the path for the enemy
 	var next_path_position: Vector2 = nav2d.get_next_path_position()
+	#gives direction
 	var direction: Vector2 = current_agent_position.direction_to(next_path_position)
+	#makes it move
 	velocity = direction * SPEED
+	#alows it to move
 	move_and_slide()
 	
 	# Loop through all solid contacts from move_and_slide()
@@ -41,8 +49,3 @@ func _physics_process(delta: float) -> void:
 		
 		if collider.is_in_group("enemies"):
 			player.respawn()
-
-
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.is_in_group("Player"):
-		enemy_delete.emit()
