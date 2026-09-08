@@ -71,7 +71,7 @@ func _physics_process(delta: float) -> void:
 		last_facing_dir_x = sign(direction.x)
 
 # 2. Update sprite flipping
-	animated_sprite.flip_v = (last_facing_dir_y == -1.0)
+	animated_sprite.flip_h = (last_facing_dir_y == -1.0)
 	animated_sprite.flip_h = (last_facing_dir_x == -1.0)
 
 # 3. Handle animations
@@ -81,22 +81,30 @@ func _physics_process(delta: float) -> void:
 	# Prioritize X movement over Y movement when moving diagonally
 		if direction.x != 0:
 			animated_sprite.play("Walking x.axis")
+		elif direction.y == -1.0:
+			animated_sprite.play("Walking y.axis_up")
+		elif direction.y == 1.0:
+			animated_sprite.play("Walking y.axis_down")
+		elif direction.y == 0:
+			animated_sprite.play("Idle y.axis_down")
+		elif direction.y == 0:
+			animated_sprite.play("Idle y.axis_up")
 		else:
-			animated_sprite.play("Walking y.axis")
+			animated_sprite.play("Walking x.axis")
 	else:
-		animated_sprite.play("Idle x.axis")
+		pass
 
 
 # 3. Check for enemy collisions
 func check_enemy_collisions():
-		for i in get_slide_collision_count():
-			var collision = get_slide_collision(i)
-			var collider = collision.get_collider()
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
 		
-			# If the object we bumped into is in the "Enemies" group
-			if collider and collider.is_in_group("Enemies"):
-				respawn()
-				break
+		# If the object we bumped into is in the "Enemies" group
+		if collider and collider.is_in_group("Enemies"):
+			respawn()
+			break
 
 
 func _on_dash_timer_timeout() -> void:
