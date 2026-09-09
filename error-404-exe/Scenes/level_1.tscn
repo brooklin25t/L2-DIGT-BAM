@@ -252,7 +252,7 @@ wait_time = 5.0
 autostart = true
 
 [node name="Portal" parent="." unique_id=816684105 instance=ExtResource("20_6ssoq")]
-position = Vector2(6504, 2000)
+position = Vector2(6662, 1959)
 
 [node name="nav_reg" type="Node2D" parent="." unique_id=1904979665]
 
