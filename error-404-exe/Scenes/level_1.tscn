@@ -76,7 +76,6 @@ texture_region_size = Vector2i(64, 64)
 0:0/0/physics_layer_13/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 7.733925, 26.439234, 7.913784, 26.619093, 32, -32, 32)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2awvy"]
-load_path = "res://.godot/imported/Untitled_Artwork 12.png-033d51fb7687f5579af3fd8dc42a1028.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pm77i"]
 texture = SubResource("CompressedTexture2D_2awvy")
@@ -240,7 +239,7 @@ wait_time = 4.0
 autostart = true
 
 [node name="enemy_spawn_timer2" type="Timer" parent="." unique_id=1163518338]
-wait_time = 4.0
+wait_time = 0.1
 autostart = true
 
 [node name="enemy_spawn_timer3" type="Timer" parent="." unique_id=1915481377]
