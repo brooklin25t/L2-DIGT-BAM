@@ -94,3 +94,5 @@ func _on_start_spawn_3():
 func _on_conector_timeout() -> void:
 	var enemy = enemy_prefab.instantiate()
 	enemy.start_spawn.connect(_on_start_spawn)
+
+#
