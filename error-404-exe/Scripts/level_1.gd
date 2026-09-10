@@ -1,35 +1,119 @@
 extends Node2D
-
+#gets enemy ready for spawning
 @onready var enemy_prefab = preload("res://Prefab/enemy.tscn")
-var delete: CharacterBody2D
-var enemy_pos = Vector2(3248, -600)
+@onready var enemy2_prefab = preload("res://Prefab/enemy2.tscn")
+@onready var enemy3_prefab = preload("res://Prefab/enemy3.tscn")
+var spawn_limit = 0
+
+@onready var timer1: Timer = $enemy_spawn_timer2
+@onready var timer2: Timer = $enemy_spawn_timer3
+@onready var timer3: Timer = $enemy_spawn_timer4
+var spawn_stoped: bool = false
+var spawn_stoped2: bool = false
+var spawn_stoped3: bool = false
+
+
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if spawn_limit >= 100:
+		timer1.stop()
+		timer2.stop()
+		timer3.stop()
 
+#spaws enemy every so often
 func _on_enemy_spawn_timer_2_timeout() -> void:
 	var enemy = enemy_prefab.instantiate()
+	enemy.stop_spawn.connect(_on_stop_spawn)
+	enemy.start_spawn.connect(_on_start_spawn)
 	enemy.position = Vector2(-752,1680)
-	add_child(enemy)
+	spawn_limit += 1
+	if spawn_stoped == false:
+		add_child(enemy)
 
 
 func _on_enemy_spawn_timer_3_timeout() -> void:
+	var enemy2 = enemy2_prefab.instantiate()
+	enemy2.stop_spawn2.connect(_on_stop_spawn_2)
+	enemy2.start_spawn2.connect(_on_start_spawn_2)
+	enemy2.position = Vector2(3040,4288)
+	spawn_limit += 1
+	if spawn_stoped2 == false:
+		add_child(enemy2)
+
+
+
+func _on_enemy_spawn_timer_4_timeout() -> void:
+	var enemy3 = enemy3_prefab.instantiate()
+	enemy3.stop_spawn3.connect(_on_stop_spawn_3)
+	enemy3.start_spawn3.connect(_on_start_spawn_3)
+	enemy3.position = Vector2(3248,-600)
+	spawn_limit += 1
+	if spawn_stoped3 == false:
+		add_child(enemy3)
+
+
+func _on_stop_spawn():
 	var enemy = enemy_prefab.instantiate()
-	enemy.position = Vector2(3040,4288)
-	add_child(enemy)
+	enemy.start_spawn.connect(_on_start_spawn)
+	spawn_stoped = true
+	
+func _on_start_spawn():
+	timer1.start()
+	spawn_stoped = false
+	
+func _on_stop_spawn_2():
+	spawn_stoped2 = true
+	
+func _on_start_spawn_2():
+	timer2.start()
+	spawn_stoped2 = false
+	
+func _on_stop_spawn_3():
+	spawn_stoped3 = true
+	
+func _on_start_spawn_3():
+	timer3.start()
+	spawn_stoped3 = false
 
 
-func _on_enemy_spawn_timer_timeout() -> void:
-	var enemy = enemy_prefab.instantiate()
-	enemy.position = enemy_pos
-	add_child(enemy)
+func _on_reg_1_area_entered(area: Area2D) -> void:
+	if area.name == "character":
+		timer1.start()
+		spawn_stoped = false
 
-#func _on_enemy_delete():
-	#queue_free()
+
+func _on_reg_1_area_exited(area: Area2D) -> void:
+	if area.name == "character":
+		timer1.stop()
+		spawn_stoped = true
+
+
+func _on_reg_2_area_entered(area: Area2D) -> void:
+	if area.name == "character":
+		timer1.start()
+		spawn_stoped = false
+
+
+func _on_reg_2_area_exited(area: Area2D) -> void:
+	if area.name == "character":
+		timer1.stop()
+		spawn_stoped = true
+
+
+func _on_reg_3_area_entered(area: Area2D) -> void:
+	if area.name == "character":
+		timer1.start()
+		spawn_stoped = false
+
+
+func _on_reg_3_area_exited(area: Area2D) -> void:
+	if area.name == "character":
+		timer1.stop()
+		spawn_stoped = true
