@@ -24,6 +24,8 @@
 [ext_resource type="PackedScene" uid="uid://ce18ltn55c2g5" path="res://Prefab/enemy.tscn" id="21_8jhox"]
 [ext_resource type="PackedScene" uid="uid://26j5y6rb5wrt" path="res://Prefab/boss.tscn" id="22_hed5s"]
 [ext_resource type="PackedScene" uid="uid://d4m4polf4w5d3" path="res://Prefab/portal_level_3.tscn" id="24_2awvy"]
+[ext_resource type="Texture2D" uid="uid://c6yoxkgdcytiv" path="res://Temp Sprites/Right a.png" id="25_gmj2a"]
+[ext_resource type="Texture2D" uid="uid://dgx02tt5t4vwe" path="res://Temp Sprites/Down a.png" id="26_n8e0l"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_s80er"]
 vertices = PackedVector2Array(3314, 980.71094, 3314, 747.28906, 4302, 626, 4438, 626, 3732.711, 1358, 3435.289, 1358, 3818, 2390, 3890, 1906, 4438, 2074, 3882, 2454, 3818, 2454, 3890, 1515.2891, 3220.711, 1074, 3348.2969, 1444.9922, 8434, 2580.711, 9422, 2330, 9422, 2774, 8276.711, 2738, 8434, 2475.289, 3156.711, 590, 3790, 114, 3854, 114, 3854, 242, 3982, 242, 3982, 306, 4046, 306, 4046, 498, 4110, 498, 4110, 562, 4302, 562, 4010, 2582, 4502, 2074, 4502, 2138, 4074, 2646, 4010, 2646, 4566, 2138, 4566, 2202, 4138, 2710, 4074, 2710, 4630, 2202, 4630, 2266, 4694, 2266, 4694, 2330, 5198, 2574, 6670, 2330, 6670, 2546, 5682, 2574, 5810, 2638, 6734, 2546, 6734, 2610, 6002, 2702, 5810, 2702, 7154, 2610, 7154, 2546, 7218, 2546, 7950, 2644.711, 8043.289, 2738, 6002, 2774, 5682, 2638, 5198, 2638, 5006, 2638, 5006, 2702, 4878, 2702, 4878, 2774, 4138, 2774, 3946, 2582, 3946, 2518, 3882, 2518, 3690, 2390, 3690, 2326, 3626, 2326, 3626, 2262, 1898, -38, 3790, -38, 2923.289, 590, 2838.9063, 674.3828, 2738, 1611.7969, 2738, 1451.2891, 3278, 1655.8906, 3278, 1812.7109, 2859.289, 1074, 2644.711, 1358, 2661.2734, 1765.2734, 3371.289, 1906, 2766, 980.71094, 2347.289, 1358, 2766, 820.2031, 2254, 1451.2891, 8340.711, 2382, 7218, 2330, 8043.289, 2382, 7950, 2475.289, 1898, 2262, 2254, 1748.7109, 2347.289, 1842, 2507.7969, 1842)
@@ -187,6 +189,10 @@ sources/23 = SubResource("TileSetAtlasSource_nrv0r")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hms56"]
 size = Vector2(96, 471.5)
 
+[sub_resource type="LabelSettings" id="LabelSettings_pygsh"]
+font_size = 36
+font_color = Color(0, 0, 0, 1)
+
 [node name="level_3" type="Node2D" unique_id=1205261415]
 script = ExtResource("1_2awvy")
 
@@ -322,6 +328,69 @@ wait_time = 120.0
 
 [node name="Portal" parent="." unique_id=816684105 instance=ExtResource("24_2awvy")]
 position = Vector2(11680, 2742)
+
+[node name="Control" type="Control" parent="." unique_id=263832450]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control" unique_id=1067696640]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 136.0
+offset_right = 538.0
+offset_bottom = 159.0
+text = "Your goal is to survive the boss"
+label_settings = SubResource("LabelSettings_pygsh")
+
+[node name="Control2" type="Control" parent="." unique_id=697314639]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 296.0
+offset_top = 136.0
+offset_right = 336.0
+offset_bottom = 176.0
+
+[node name="RightA" type="Sprite2D" parent="Control2" unique_id=450494501]
+position = Vector2(664, 16)
+texture = ExtResource("25_gmj2a")
+
+[node name="DownA" type="Sprite2D" parent="Control2" unique_id=1320926727]
+position = Vector2(2136, 104)
+texture = ExtResource("26_n8e0l")
+
+[node name="RightA2" type="Sprite2D" parent="Control2" unique_id=208324042]
+position = Vector2(2536, 1080)
+texture = ExtResource("25_gmj2a")
+
+[node name="RightA3" type="Sprite2D" parent="Control2" unique_id=2013721663]
+position = Vector2(2256, 200)
+texture = ExtResource("25_gmj2a")
+
+[node name="DownA2" type="Sprite2D" parent="Control2" unique_id=1831472116]
+position = Vector2(3472, 528)
+texture = ExtResource("26_n8e0l")
+
+[node name="RightA4" type="Sprite2D" parent="Control2" unique_id=1942283928]
+position = Vector2(3424, 1128)
+texture = ExtResource("25_gmj2a")
+
+[node name="DownA3" type="Sprite2D" parent="Control2" unique_id=1361885736]
+position = Vector2(2632, 1408)
+texture = ExtResource("26_n8e0l")
+
+[node name="RightA5" type="Sprite2D" parent="Control2" unique_id=5421109]
+position = Vector2(2696, 1960)
+texture = ExtResource("25_gmj2a")
+
+[node name="RightA6" type="Sprite2D" parent="Control2" unique_id=1969786844]
+position = Vector2(3576, 2048)
+texture = ExtResource("25_gmj2a")
+
+[node name="RightA7" type="Sprite2D" parent="Control2" unique_id=574958223]
+position = Vector2(4936, 2400)
+texture = ExtResource("25_gmj2a")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="bullet_spawn" to="." method="_on_bullet_spawn_timeout"]
