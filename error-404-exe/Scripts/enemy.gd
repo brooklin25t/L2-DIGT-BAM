@@ -31,13 +31,13 @@ func _physics_process(delta: float) -> void:
 		
 	start_spawn.emit()
 	if not nav2d.is_target_reachable():
-		velocity = Vector2.ZERO
-		move_and_slide()
+		nav2d.navigation_finished
 		stop_spawn.emit()
 		return
 	#checks if the navigation is finished and then sets speed to zreo
 	if nav2d.is_navigation_finished():
 		velocity = Vector2.ZERO
+		stop_spawn.emit()
 		move_and_slide()
 		return
 	#where the enemy is
@@ -57,4 +57,4 @@ func _physics_process(delta: float) -> void:
 		var collider = collision.get_collider()
 		
 		if collider.is_in_group("enemies"):
-			player.respawn()
+			get_tree().change_scene_to_file("res://Scenes/death_scene.tscn")

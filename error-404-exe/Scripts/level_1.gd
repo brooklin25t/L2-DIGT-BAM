@@ -15,7 +15,15 @@ var spawn_stoped3: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	var enemy = enemy_prefab.instantiate()
+	var enemy2 = enemy2_prefab.instantiate()
+	var enemy3 = enemy3_prefab.instantiate()
+	enemy.stop_spawn.connect(_on_stop_spawn)
+	enemy.start_spawn.connect(_on_start_spawn)
+	enemy2.stop_spawn2.connect(_on_stop_spawn_2)
+	enemy2.start_spawn2.connect(_on_start_spawn_2)
+	enemy3.stop_spawn3.connect(_on_stop_spawn_3)
+	enemy3.start_spawn3.connect(_on_start_spawn_3)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -34,34 +42,34 @@ func _process(delta: float) -> void:
 #spaws enemy every so often
 func _on_enemy_spawn_timer_2_timeout() -> void:
 	var enemy = enemy_prefab.instantiate()
-	enemy.position = Vector2(-752,1680)
-	add_child(enemy)
 	enemy.stop_spawn.connect(_on_stop_spawn)
 	enemy.start_spawn.connect(_on_start_spawn)
+	enemy.position = Vector2(-752,1680)
 	spawn_limit += 1
+	if spawn_stoped == false:
+		add_child(enemy)
 
 
 func _on_enemy_spawn_timer_3_timeout() -> void:
 	var enemy2 = enemy2_prefab.instantiate()
-	enemy.position = Vector2(3040,4288)
-	add_child(enemy2)
-	enemy2.stop_spawn2.connect(_on_stop_spawn_2)
-	enemy2.start_spawn2.connect(_on_start_spawn_2)
+	enemy2.position = Vector2(3040,4288)
 	spawn_limit += 1
-	#add way to hold spawning till spawn stoped is false
+	if spawn_stoped2 == false:
+		add_child(enemy2)
 
 
 
 func _on_enemy_spawn_timer_4_timeout() -> void:
 	var enemy3 = enemy3_prefab.instantiate()
-	enemy.position = Vector2(3248,-600)
-	add_child(enemy3)
-	enemy3.stop_spawn3.connect(_on_stop_spawn_3)
-	enemy3.start_spawn3.connect(_on_start_spawn_3)
+	enemy3.position = Vector2(3248,-600)
 	spawn_limit += 1
+	if spawn_stoped3 == false:
+		add_child(enemy3)
 
 
 func _on_stop_spawn():
+	var enemy = enemy_prefab.instantiate()
+	enemy.start_spawn.connect(_on_start_spawn)
 	spawn_stoped = true
 	
 func _on_start_spawn():
@@ -81,3 +89,8 @@ func _on_stop_spawn_3():
 func _on_start_spawn_3():
 	timer3.start()
 	spawn_stoped3 = false
+
+
+func _on_conector_timeout() -> void:
+	var enemy = enemy_prefab.instantiate()
+	enemy.start_spawn.connect(_on_start_spawn)
