@@ -13,17 +13,11 @@ var spawn_stoped2: bool = false
 var spawn_stoped3: bool = false
 
 
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var enemy = enemy_prefab.instantiate()
-	var enemy2 = enemy2_prefab.instantiate()
-	var enemy3 = enemy3_prefab.instantiate()
-	enemy.stop_spawn.connect(_on_stop_spawn)
-	enemy.start_spawn.connect(_on_start_spawn)
-	enemy2.stop_spawn2.connect(_on_stop_spawn_2)
-	enemy2.start_spawn2.connect(_on_start_spawn_2)
-	enemy3.stop_spawn3.connect(_on_stop_spawn_3)
-	enemy3.start_spawn3.connect(_on_start_spawn_3)
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -31,12 +25,6 @@ func _process(delta: float) -> void:
 	if spawn_limit >= 100:
 		timer1.stop()
 		timer2.stop()
-		timer3.stop()
-	if spawn_stoped == true:
-		timer1.stop()
-	if spawn_stoped2 == true:
-		timer2.stop()
-	if spawn_stoped3 == true:
 		timer3.stop()
 
 #spaws enemy every so often
@@ -52,6 +40,8 @@ func _on_enemy_spawn_timer_2_timeout() -> void:
 
 func _on_enemy_spawn_timer_3_timeout() -> void:
 	var enemy2 = enemy2_prefab.instantiate()
+	enemy2.stop_spawn2.connect(_on_stop_spawn_2)
+	enemy2.start_spawn2.connect(_on_start_spawn_2)
 	enemy2.position = Vector2(3040,4288)
 	spawn_limit += 1
 	if spawn_stoped2 == false:
@@ -61,6 +51,8 @@ func _on_enemy_spawn_timer_3_timeout() -> void:
 
 func _on_enemy_spawn_timer_4_timeout() -> void:
 	var enemy3 = enemy3_prefab.instantiate()
+	enemy3.stop_spawn3.connect(_on_stop_spawn_3)
+	enemy3.start_spawn3.connect(_on_start_spawn_3)
 	enemy3.position = Vector2(3248,-600)
 	spawn_limit += 1
 	if spawn_stoped3 == false:
@@ -91,8 +83,37 @@ func _on_start_spawn_3():
 	spawn_stoped3 = false
 
 
-func _on_conector_timeout() -> void:
-	var enemy = enemy_prefab.instantiate()
-	enemy.start_spawn.connect(_on_start_spawn)
+func _on_reg_1_area_entered(area: Area2D) -> void:
+	if area.name == "character":
+		timer1.start()
+		spawn_stoped = false
 
-#
+
+func _on_reg_1_area_exited(area: Area2D) -> void:
+	if area.name == "character":
+		timer1.stop()
+		spawn_stoped = true
+
+
+func _on_reg_2_area_entered(area: Area2D) -> void:
+	if area.name == "character":
+		timer1.start()
+		spawn_stoped = false
+
+
+func _on_reg_2_area_exited(area: Area2D) -> void:
+	if area.name == "character":
+		timer1.stop()
+		spawn_stoped = true
+
+
+func _on_reg_3_area_entered(area: Area2D) -> void:
+	if area.name == "character":
+		timer1.start()
+		spawn_stoped = false
+
+
+func _on_reg_3_area_exited(area: Area2D) -> void:
+	if area.name == "character":
+		timer1.stop()
+		spawn_stoped = true

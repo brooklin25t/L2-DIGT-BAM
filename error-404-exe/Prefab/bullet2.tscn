@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dit2l4dx0q82f"]
+
+[ext_resource type="Script" uid="uid://wuq31ntp7tie" path="res://Scripts/bullet.gd" id="1_cvxwa"]
+[ext_resource type="Texture2D" uid="uid://clk2evse2x7ic" path="res://Temp Sprites/enemy_placeholder.png" id="1_kqlff"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pygsh"]
+radius = 13.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hms56"]
+radius = 4.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=495336418 groups=["Enemies", "bullet"]]
+script = ExtResource("1_cvxwa")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1424090027]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1208583627]
+position = Vector2(-2, -2)
+shape = SubResource("CircleShape2D_pygsh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=105006083]
+shape = SubResource("CircleShape2D_hms56")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1504451143]
+scale = Vector2(0.084, 0.084)
+texture = ExtResource("1_kqlff")
+
+[node name="alive_time" type="Timer" parent="." unique_id=629870192]
+wait_time = 10.0
+one_shot = true
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1597597000]
+debug_enabled = true
+
+[connection signal="timeout" from="alive_time" to="." method="_on_alive_time_timeout"]
