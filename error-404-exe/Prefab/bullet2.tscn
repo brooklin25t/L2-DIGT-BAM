@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://bbjc4ojhqmcti"]
+[gd_scene format=3 uid="uid://dit2l4dx0q82f"]
 
-[ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_cvxwa"]
+[ext_resource type="Script" uid="uid://wuq31ntp7tie" path="res://Scripts/bullet.gd" id="1_cvxwa"]
 [ext_resource type="Texture2D" uid="uid://clk2evse2x7ic" path="res://Temp Sprites/enemy_placeholder.png" id="1_kqlff"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pygsh"]

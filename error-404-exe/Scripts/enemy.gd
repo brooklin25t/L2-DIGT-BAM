@@ -4,45 +4,62 @@ const SPEED = 330.0
 @onready var player_prefab = preload("res://Prefab/player.tscn")
 @onready var spawn_position: Vector2 = global_position
 @onready var nav2d: NavigationAgent2D = $NavigationAgent2D
+@onready var animated_sprite = $AnimatedSprite2D
+
 var player: CharacterBody2D
 signal enemy_delete
+signal stop_spawn
+signal start_spawn
+
+# Track last horizontal direction (1 = right, -1 = left)
+var last_facing_x: float = 1.0
 
 func respawn():
-	#Reset the player's position back to the spawn
 	global_position = spawn_position
-	#Optional: Reset velocity to zero so the player doesn't keep falling/sliding
 	velocity = Vector2.ZERO 
 
 func _ready() -> void:
-	await get_tree().physics_frame
+	#makes the player the target
 	player = get_tree().get_first_node_in_group("Target")
 
-
 func _physics_process(delta: float) -> void:
+	#checks if the player is in the scene
 	if not player:
 		print("help")
 		return
+	#gets player position
 	if player != null:
 		nav2d.target_position = player.global_position
+		
+	start_spawn.emit()
+	if not nav2d.is_target_reachable():
+		nav2d.navigation_finished
+		stop_spawn.emit()
+		return
+	#checks if the navigation is finished and then sets speed to zreo
 	if nav2d.is_navigation_finished():
 		velocity = Vector2.ZERO
+		stop_spawn.emit()
 		move_and_slide()
+		# Play idle animation when stopped
+		animated_sprite.flip_h = (last_facing_x == -1.0)
+		animated_sprite.play("Idle x.axis")
 		return
+	#where the enemy is
 	var current_agent_position: Vector2 = global_position
+	#finding the path for the enemy
 	var next_path_position: Vector2 = nav2d.get_next_path_position()
+	#gives direction
 	var direction: Vector2 = current_agent_position.direction_to(next_path_position)
+	#makes it move
 	velocity = direction * SPEED
+	#alows it to move
 	move_and_slide()
 	
-	# Loop through all solid contacts from move_and_slide()
+	# Loop through all solid contacts safely
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
 		
 		if collider.is_in_group("enemies"):
-			player.respawn()
-
-
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.is_in_group("Player"):
-		enemy_delete.emit()
+			get_tree().change_scene_to_file("res://Scenes/death_scene.tscn")

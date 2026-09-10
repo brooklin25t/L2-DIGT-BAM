@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://cnyapsv4j3ea8"]
+[gd_scene format=3 uid="uid://dtunhhhtarksi"]
 
 [ext_resource type="PackedScene" uid="uid://cs5d5po13a7u7" path="res://Prefab/player.tscn" id="1_h5lxt"]
-[ext_resource type="PackedScene" path="res://Prefab/bullet2.tscn" id="2_h5lxt"]
+[ext_resource type="PackedScene" uid="uid://dit2l4dx0q82f" path="res://Prefab/bullet2.tscn" id="2_h5lxt"]
 
 [node name="test bed" type="Node2D" unique_id=1785917560]
 
