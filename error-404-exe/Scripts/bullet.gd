@@ -2,18 +2,8 @@ extends CharacterBody2D
 
 const SPEED = 330.0
 @onready var player_prefab = preload("res://Prefab/player.tscn")
-@onready var spawn_position: Vector2 = global_position
 @onready var nav2d: NavigationAgent2D = $NavigationAgent2D
 var player: CharacterBody2D
-signal enemy_delete
-signal stop_spawn
-signal start_spawn
-
-func respawn():
-	#Reset the player's position back to the spawn
-	global_position = spawn_position
-	#Optional: Reset velocity to zero so the player doesn't keep falling/sliding
-	velocity = Vector2.ZERO 
 
 func _ready() -> void:
 	#makes the player the target
@@ -28,16 +18,9 @@ func _physics_process(delta: float) -> void:
 	#gets player position
 	if player != null:
 		nav2d.target_position = player.global_position
-		
-	start_spawn.emit()
-	if not nav2d.is_target_reachable():
-		nav2d.navigation_finished
-		stop_spawn.emit()
-		return
 	#checks if the navigation is finished and then sets speed to zreo
 	if nav2d.is_navigation_finished():
 		velocity = Vector2.ZERO
-		stop_spawn.emit()
 		move_and_slide()
 		return
 	#where the enemy is

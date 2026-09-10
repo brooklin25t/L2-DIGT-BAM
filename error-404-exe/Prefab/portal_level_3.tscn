@@ -1,13 +1,13 @@
-[gd_scene format=3 uid="uid://c17cuyysif6pp"]
+[gd_scene format=3 uid="uid://d4m4polf4w5d3"]
 
-[ext_resource type="Script" uid="uid://xvlkfterop0b" path="res://Scripts/portal.gd" id="1_adkk7"]
-[ext_resource type="Texture2D" uid="uid://b27tnfmkbdynx" path="res://Temp Sprites/portal.png" id="2_adkk7"]
+[ext_resource type="Script" uid="uid://by605mvgytc58" path="res://Scripts/portal_level_3.gd" id="1_cwp7g"]
+[ext_resource type="Texture2D" uid="uid://b27tnfmkbdynx" path="res://Temp Sprites/portal.png" id="2_f3fjk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mako7"]
 size = Vector2(64, 120)
 
 [node name="Portal" type="Area2D" unique_id=816684105]
-script = ExtResource("1_adkk7")
+script = ExtResource("1_cwp7g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=695152757]
 position = Vector2(0, 4)
@@ -16,10 +16,10 @@ shape = SubResource("RectangleShape2D_mako7")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=92291260]
 position = Vector2(-1.9073486e-06, 3.9999943)
 scale = Vector2(0.99999994, 1.875)
-texture = ExtResource("2_adkk7")
+texture = ExtResource("2_f3fjk")
 
 [node name="survival_time" type="Timer" parent="." unique_id=1020598224]
-wait_time = 180.0
+wait_time = 120.0
 autostart = true
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

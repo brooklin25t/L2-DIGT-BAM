@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://ce18ltn55c2g5"]
+[gd_scene format=3 uid="uid://dhryk5ofklume"]
 
-[ext_resource type="Script" uid="uid://bpkbc7k377p1q" path="res://Scripts/enemy.gd" id="1_axcr2"]
-[ext_resource type="Script" uid="uid://obvif3a52yw3" path="res://Scripts/enemy_class.gd" id="2_50k3d"]
-[ext_resource type="Texture2D" uid="uid://clk2evse2x7ic" path="res://Temp Sprites/enemy_placeholder.png" id="2_axcr2"]
+[ext_resource type="Script" uid="uid://bcjpeyxmgaqew" path="res://Scripts/enemy2.gd" id="1_a3def"]
+[ext_resource type="Script" uid="uid://obvif3a52yw3" path="res://Scripts/enemy_class.gd" id="2_6foc4"]
+[ext_resource type="Texture2D" uid="uid://clk2evse2x7ic" path="res://Temp Sprites/enemy_placeholder.png" id="3_xgdhg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mako7"]
 radius = 49.09175
@@ -11,7 +11,7 @@ radius = 49.09175
 radius = 49.010204
 
 [node name="Enemy" type="CharacterBody2D" unique_id=372405923 groups=["Enemies"]]
-script = ExtResource("1_axcr2")
+script = ExtResource("1_a3def")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=248025127]
 debug_enabled = true
@@ -19,7 +19,7 @@ debug_enabled = true
 [node name="Area2D" type="Area2D" parent="." unique_id=1333466792 groups=["Enemies"]]
 collision_layer = 3
 collision_mask = 3
-script = ExtResource("2_50k3d")
+script = ExtResource("2_6foc4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=75236631]
 position = Vector2(-3, -8)
@@ -28,13 +28,11 @@ shape = SubResource("CircleShape2D_mako7")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1729443703]
 position = Vector2(0, -4.7683716e-07)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_axcr2")
+texture = ExtResource("3_xgdhg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1685359387]
 position = Vector2(-3, -8)
 shape = SubResource("CircleShape2D_50k3d")
-
-[node name="movement_10px" type="Timer" parent="." unique_id=88699059]
 
 [connection signal="enemy_delete" from="." to="." method="_on_enemy_delete"]
 [connection signal="navigation_finished" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_navigation_finished"]

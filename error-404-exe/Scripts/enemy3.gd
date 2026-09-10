@@ -6,8 +6,8 @@ const SPEED = 330.0
 @onready var nav2d: NavigationAgent2D = $NavigationAgent2D
 var player: CharacterBody2D
 signal enemy_delete
-signal stop_spawn
-signal start_spawn
+signal stop_spawn3
+signal start_spawn3
 
 func respawn():
 	#Reset the player's position back to the spawn
@@ -29,15 +29,15 @@ func _physics_process(delta: float) -> void:
 	if player != null:
 		nav2d.target_position = player.global_position
 		
-	start_spawn.emit()
+	start_spawn3.emit()
 	if not nav2d.is_target_reachable():
-		nav2d.navigation_finished
-		stop_spawn.emit()
+		velocity = Vector2.ZERO
+		move_and_slide()
+		stop_spawn3.emit()
 		return
 	#checks if the navigation is finished and then sets speed to zreo
 	if nav2d.is_navigation_finished():
 		velocity = Vector2.ZERO
-		stop_spawn.emit()
 		move_and_slide()
 		return
 	#where the enemy is
