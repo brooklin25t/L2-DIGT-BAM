@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cnyapsv4j3ea8"]
+
+[ext_resource type="PackedScene" uid="uid://cs5d5po13a7u7" path="res://Prefab/player.tscn" id="1_h5lxt"]
+[ext_resource type="PackedScene" path="res://Prefab/bullet2.tscn" id="2_h5lxt"]
+
+[node name="test bed" type="Node2D" unique_id=1785917560]
+
+[node name="Player" parent="." unique_id=1002642745 instance=ExtResource("1_h5lxt")]
+position = Vector2(76, 51)
+
+[node name="CharacterBody2D" parent="." unique_id=495336418 instance=ExtResource("2_h5lxt")]
+position = Vector2(246, 61)
