@@ -57,4 +57,4 @@ func _physics_process(delta: float) -> void:
 		var collider = collision.get_collider()
 		
 		if collider.is_in_group("enemies"):
-			player.respawn()
+			get_tree().change_scene_to_file("res://Scenes/death_scene.tscn")

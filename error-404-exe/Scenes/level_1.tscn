@@ -234,12 +234,12 @@ theme_override_font_sizes/font_size = 31
 text = "For now you are not 
 able to kill enimes"
 
-[node name="enemy_spawn_timer" type="Timer" parent="." unique_id=1453616420]
-wait_time = 4.0
+[node name="conector" type="Timer" parent="." unique_id=1453616420]
+wait_time = 0.1
 autostart = true
 
 [node name="enemy_spawn_timer2" type="Timer" parent="." unique_id=1163518338]
-wait_time = 0.1
+wait_time = 4.0
 autostart = true
 
 [node name="enemy_spawn_timer3" type="Timer" parent="." unique_id=1915481377]
@@ -360,10 +360,23 @@ polygon = PackedVector2Array(1408, 1984, 1472, 1920, 1720, 1920, 1728, 1920, 179
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(1344, 768, 1408, 704, 1856, 704, 1920, 768, 1984, 960, 1984, 1152, 1920, 1280, 1856, 1344, 1600, 1344, 1536, 1280, 1408, 1216, 1344, 1088)
 
-[connection signal="timeout" from="enemy_spawn_timer" to="." method="_on_enemy_spawn_timer_timeout"]
-[connection signal="timeout" from="enemy_spawn_timer" to="character" method="_on_enemy_spawn_timer_timeout"]
+[node name="Area2D" type="Area2D" parent="." unique_id=895524036]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1029418529]
+polygon = PackedVector2Array(-864, 1816, -864, 1552, 48, 1552, 40, 592, 656, 744, 1248, 1288, 1432, 1272, 1512, 1312, 1584, 1384, 1872, 1384, 1952, 1304, 2000, 1224, 2096, 1856, 2528, 2736, 2368, 3408, 1824, 3616, 40, 3608, 40, 1816)
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=151380407]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D2" unique_id=1304881291]
+polygon = PackedVector2Array(3104, -752, 3352, -752, 3360, 24, 5000, 24, 5064, 280, 4720, 280, 4640, 360, 4568, 576, 4568, 792, 4696, 912, 4208, 1224, 3560, 1552, 3560, 1328, 3480, 1240, 3344, 1184, 3280, 1112, 3160, 920, 2920, 920, 2776, 1072, 2776, 1544, 2528, 1464, 2016, 1048, 2024, 952, 1960, 744, 1872, 664, 1800, 664, 1768, 600, 1968, 168, 2408, 24, 3112, 24)
+
+[node name="Area2D3" type="Area2D" parent="." unique_id=846096245]
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Area2D3" unique_id=1183500881]
+polygon = PackedVector2Array(3160, 4376, 2912, 4376, 2920, 3616, 2448, 3496, 2584, 3216, 2600, 3232, 2744, 3304, 3344, 3304, 3432, 3216, 3432, 2848, 3208, 2776, 3000, 2776, 2800, 2840, 2672, 2872, 2680, 2344, 3184, 2024, 3416, 2024, 3512, 1840, 4152, 1568, 4576, 1320, 4568, 1688, 4784, 1896, 5152, 1896, 5224, 1600, 5224, 1320, 5144, 1240, 4872, 1176, 4816, 1176, 5392, 832, 5776, 560, 6048, 936, 6136, 1264, 6120, 1672, 6336, 2160, 6256, 2512, 6144, 2656, 5648, 3248, 4720, 3272, 4120, 3464, 3848, 3616, 3152, 3616)
+
+[connection signal="timeout" from="conector" to="." method="_on_conector_timeout"]
 [connection signal="timeout" from="enemy_spawn_timer2" to="." method="_on_enemy_spawn_timer_2_timeout"]
-[connection signal="timeout" from="enemy_spawn_timer2" to="character" method="_on_enemy_spawn_timer_timeout"]
 [connection signal="timeout" from="enemy_spawn_timer3" to="." method="_on_enemy_spawn_timer_3_timeout"]
 [connection signal="timeout" from="enemy_spawn_timer3" to="character" method="_on_enemy_spawn_timer_timeout"]
 [connection signal="timeout" from="enemy_spawn_timer4" to="." method="_on_enemy_spawn_timer_4_timeout"]
