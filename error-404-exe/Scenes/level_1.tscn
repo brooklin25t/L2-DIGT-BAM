@@ -36,6 +36,7 @@ use_texture_padding = false
 texture = ExtResource("3_gcla0")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
+0:0/0/physics_layer_14/polygon_0/points = PackedVector2Array(-32, -32, 26.12772, -32, 26.12772, 11.470705, -32, 11.470707)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_imks0"]
 texture = ExtResource("2_oovug")
@@ -101,6 +102,7 @@ texture_region_size = Vector2i(64, 64)
 texture = ExtResource("14_u0op5")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
+0:0/0/physics_layer_15/polygon_0/points = PackedVector2Array(-26.127722, -32, 32, -32, 32, 12.107967, -26.446352, 12.4265995)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2awvy"]
 
@@ -163,6 +165,8 @@ physics_layer_10/collision_layer = 1
 physics_layer_11/collision_layer = 1
 physics_layer_12/collision_layer = 1
 physics_layer_13/collision_layer = 1
+physics_layer_14/collision_layer = 1
+physics_layer_15/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_6ssoq")
 sources/3 = SubResource("TileSetAtlasSource_pm77i")
 sources/4 = SubResource("TileSetAtlasSource_xub2v")
@@ -385,6 +389,7 @@ position = Vector2(6662, 1959)
 [node name="nav_reg" type="Node2D" parent="nav2d" unique_id=1904979665]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="nav2d/nav_reg" unique_id=1601757923]
+visible = false
 navigation_polygon = SubResource("NavigationPolygon_yltlr")
 
 [node name="Polygon2D" type="Polygon2D" parent="nav2d/nav_reg/NavigationRegion2D" unique_id=1338327156]
@@ -420,6 +425,7 @@ color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(1344, 768, 1408, 704, 1856, 704, 1920, 768, 1984, 960, 1984, 1152, 1920, 1280, 1856, 1344, 1600, 1344, 1536, 1280, 1408, 1216, 1344, 1088)
 
 [node name="NavigationRegion2D2" type="NavigationRegion2D" parent="nav2d/nav_reg" unique_id=1144421597]
+visible = false
 navigation_polygon = SubResource("NavigationPolygon_3kso8")
 
 [node name="Polygon2D" type="Polygon2D" parent="nav2d/nav_reg/NavigationRegion2D2" unique_id=1891496728]
@@ -455,6 +461,7 @@ color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(1344, 768, 1408, 704, 1856, 704, 1920, 768, 1984, 960, 1984, 1152, 1920, 1280, 1856, 1344, 1600, 1344, 1536, 1280, 1408, 1216, 1344, 1088)
 
 [node name="NavigationRegion2D3" type="NavigationRegion2D" parent="nav2d/nav_reg" unique_id=938115562]
+visible = false
 navigation_polygon = SubResource("NavigationPolygon_imks0")
 
 [node name="Polygon2D" type="Polygon2D" parent="nav2d/nav_reg/NavigationRegion2D3" unique_id=372990359]
