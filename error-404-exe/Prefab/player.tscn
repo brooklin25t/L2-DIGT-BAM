@@ -14,14 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://boik3ub0n56aw" path="res://Sprites/_walk_U_2-removebg-preview.png" id="7_yoyf1"]
 [ext_resource type="Texture2D" uid="uid://bo3h04pdpoboc" path="res://Sprites/_walk_R_2-removebg-preview.png" id="8_l2bej"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ryixy"]
-radius = 24.0
-height = 80.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mako7"]
-radius = 24.0
-height = 80.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_wyp7x"]
 atlas = ExtResource("6_wyp7x")
 region = Rect2(0, 0, 64, 64)
@@ -139,8 +131,21 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ryixy"]
+radius = 25.0
+height = 86.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mako7"]
+radius = 24.0
+height = 86.0
+
 [node name="Player" type="CharacterBody2D" unique_id=1002642745 groups=["Player", "Target"]]
 script = ExtResource("1_mkbva")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=34639006]
+scale = Vector2(1.4, 1.4)
+sprite_frames = SubResource("SpriteFrames_mako7")
+animation = &"Idle x.axis"
 
 [node name="Physics" type="CollisionShape2D" parent="." unique_id=1814544759]
 shape = SubResource("CapsuleShape2D_ryixy")
@@ -165,10 +170,6 @@ one_shot = true
 
 [node name="invulrablity" type="Timer" parent="." unique_id=599255365]
 one_shot = true
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=34639006]
-sprite_frames = SubResource("SpriteFrames_mako7")
-animation = &"Idle x.axis"
 
 [connection signal="area_entered" from="character" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
