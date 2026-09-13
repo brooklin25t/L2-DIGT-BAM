@@ -44,7 +44,8 @@ script = ExtResource("1_axcr2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=204139668]
 sprite_frames = SubResource("SpriteFrames_axcr2")
-frame_progress = 0.9429697
+autoplay = "default"
+frame_progress = 0.22140685
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=248025127]
 
