@@ -341,7 +341,8 @@ offset_left = 296.0
 offset_top = 136.0
 offset_right = 538.0
 offset_bottom = 159.0
-text = "Your goal is to survive the boss"
+text = "Your goal is to survive the boss
+for 1 min"
 label_settings = SubResource("LabelSettings_pygsh")
 
 [node name="Control2" type="Control" parent="." unique_id=697314639]
