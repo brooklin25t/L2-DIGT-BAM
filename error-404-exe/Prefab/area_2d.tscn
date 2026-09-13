@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c17cuyysif6pp"]
+
+[ext_resource type="Script" uid="uid://xvlkfterop0b" path="res://Scripts/portal.gd" id="1_adkk7"]
+[ext_resource type="Texture2D" path="res://Temp Sprites/temp-character.png" id="2_ovwh6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mako7"]
+size = Vector2(32, 48)
+
+[node name="Portal" type="Area2D" unique_id=816684105]
+script = ExtResource("1_adkk7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=695152757]
+shape = SubResource("RectangleShape2D_mako7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=92291260]
+position = Vector2(4.7683716e-07, -1.4305115e-06)
+scale = Vector2(0.49999997, 0.74999994)
+texture = ExtResource("2_ovwh6")

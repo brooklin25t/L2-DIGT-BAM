@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://b6ywuo2r1ruk1"]
+
+[node name="credits" type="Node2D" unique_id=1372713175]
+
+[node name="Control" type="Control" parent="." unique_id=1655766876]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="credits-title" type="Label" parent="Control" unique_id=1772815579]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -27.5
+offset_right = 27.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Credits"
+
+[node name="actual-credits" type="Label" parent="Control" unique_id=589172523]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Brooklin - Project Manager
+Myles - Head Programmer
+Broklin - Programmer
+AJ  - Head Graphics Designer
+AJ - Head Level Designer
+Myles - Level Designer "
