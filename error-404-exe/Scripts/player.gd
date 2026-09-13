@@ -3,6 +3,9 @@ extends CharacterBody2D
 const SPEED = 350.0
 #set dash speed
 const DASHSPEED = 700.0
+var last_facing_x: float = 1.0
+var last_facing_y: float = 1.0
+var preferred_axis: String = "x"
 
 var lives = 0
 
@@ -24,6 +27,7 @@ var dash_direction: Vector2 = Vector2.ZERO
 @onready var dash_timer: Timer = $DashTimer
 @onready var dash_cooldown: Timer = $DashCooldownTimer
 @onready var invis: Timer = $invulrablity
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D 
 
 
 func respawn():
