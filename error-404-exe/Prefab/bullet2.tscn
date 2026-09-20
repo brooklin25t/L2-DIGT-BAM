@@ -1,13 +1,42 @@
 [gd_scene format=3 uid="uid://dit2l4dx0q82f"]
 
 [ext_resource type="Script" uid="uid://wuq31ntp7tie" path="res://Scripts/bullet.gd" id="1_cvxwa"]
-[ext_resource type="Texture2D" uid="uid://clk2evse2x7ic" path="res://Temp Sprites/enemy_placeholder.png" id="1_kqlff"]
+[ext_resource type="Texture2D" uid="uid://bgu0jefhtof18" path="res://Sprites/enemy 1.png" id="2_wv2fi"]
+[ext_resource type="Texture2D" uid="uid://cwtpcmmj3xqfe" path="res://Sprites/enemy 2.png" id="3_gwoha"]
+[ext_resource type="Texture2D" uid="uid://nw5gv8bii5l0" path="res://Sprites/enemy 3.png" id="4_xc12d"]
+[ext_resource type="Texture2D" uid="uid://c2bpqtwty4cfc" path="res://Sprites/enemy 4.png" id="5_kxjxv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pygsh"]
 radius = 13.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hms56"]
 radius = 4.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ehrjd"]
+animations = [{
+"frames": [{
+"duration": 1.6,
+"texture": ExtResource("2_wv2fi")
+}, {
+"duration": 1.6,
+"texture": ExtResource("3_gwoha")
+}, {
+"duration": 1.6,
+"texture": ExtResource("4_xc12d")
+}, {
+"duration": 1.6,
+"texture": ExtResource("5_kxjxv")
+}, {
+"duration": 1.6,
+"texture": ExtResource("4_xc12d")
+}, {
+"duration": 1.6,
+"texture": ExtResource("3_gwoha")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=495336418 groups=["Enemies", "bullet"]]
 script = ExtResource("1_cvxwa")
@@ -21,15 +50,17 @@ shape = SubResource("CircleShape2D_pygsh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=105006083]
 shape = SubResource("CircleShape2D_hms56")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1504451143]
-scale = Vector2(0.084, 0.084)
-texture = ExtResource("1_kqlff")
-
 [node name="alive_time" type="Timer" parent="." unique_id=629870192]
 wait_time = 10.0
 one_shot = true
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1597597000]
 debug_enabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1553839460]
+position = Vector2(-2, -1)
+scale = Vector2(0.18310937, 0.18310937)
+sprite_frames = SubResource("SpriteFrames_ehrjd")
+autoplay = "default"
 
 [connection signal="timeout" from="alive_time" to="." method="_on_alive_time_timeout"]

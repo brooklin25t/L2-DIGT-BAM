@@ -41,3 +41,7 @@ func _physics_process(delta: float) -> void:
 		
 		if collider.is_in_group("enemies"):
 			get_tree().change_scene_to_file("res://Scenes/death_scene.tscn")
+
+
+func _on_alive_time_timeout() -> void:
+	queue_free()

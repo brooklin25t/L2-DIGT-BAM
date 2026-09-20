@@ -1,6 +1,12 @@
 [gd_scene format=3 uid="uid://7qlmpvfpasbj"]
 
 [ext_resource type="Script" uid="uid://bge5xdqukcj5l" path="res://Scripts/you_win.gd" id="1_n5sj7"]
+[ext_resource type="Texture2D" uid="uid://24ljp3a0edsw" path="res://Sprites/Untitled_Artwork 32.png" id="2_ynpw4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vmhid"]
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+outline_size = 1
 
 [node name="you win" type="Control" unique_id=1228648436]
 layout_mode = 3
@@ -11,20 +17,64 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_n5sj7")
 
-[node name="Label" type="Label" parent="." unique_id=1192622053]
-layout_mode = 0
-offset_left = 509.0
-offset_top = 282.0
-offset_right = 549.0
-offset_bottom = 305.0
-text = "You Win"
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2060626111]
+position = Vector2(576, 320)
+scale = Vector2(0.99999994, 1)
+texture = ExtResource("2_ynpw4")
 
-[node name="Button" type="Button" parent="." unique_id=1758556916]
-layout_mode = 0
-offset_left = 498.0
-offset_top = 368.0
-offset_right = 595.0
-offset_bottom = 399.0
-text = "main menu"
+[node name="Control" type="Control" parent="." unique_id=169886744]
+anchors_preset = 0
+offset_left = 8.0
+offset_right = 1160.0
+offset_bottom = 648.0
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="start-button" type="Button" parent="Control" unique_id=1605855649]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -172.0
+offset_top = -167.0
+offset_right = 121.0
+offset_bottom = -79.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "MAIN MENU"
+
+[node name="credits-button" type="Button" parent="Control" unique_id=41779391]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.67300004
+anchor_right = 0.5
+anchor_bottom = 0.67300004
+offset_left = -123.0
+offset_top = -182.10403
+offset_right = 76.0
+offset_bottom = -94.104034
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "CREDITS"
+
+[node name="title" type="Label" parent="Control" unique_id=1368605172]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.20400001
+anchor_right = 0.5
+anchor_bottom = 0.20400001
+offset_left = -200.0
+offset_top = -84.192
+offset_right = 161.0
+offset_bottom = 51.808
+grow_horizontal = 2
+text = "YOU WIN"
+label_settings = SubResource("LabelSettings_vmhid")
+horizontal_alignment = 1
+vertical_alignment = 1

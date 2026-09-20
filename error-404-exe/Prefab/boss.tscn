@@ -2,13 +2,42 @@
 
 [ext_resource type="Script" uid="uid://dtmfqt7bo6eod" path="res://Scripts/boss.gd" id="1_ahvxf"]
 [ext_resource type="Script" uid="uid://obvif3a52yw3" path="res://Scripts/enemy_class.gd" id="2_bbmji"]
-[ext_resource type="Texture2D" uid="uid://clk2evse2x7ic" path="res://Temp Sprites/enemy_placeholder.png" id="3_7ip6y"]
+[ext_resource type="Texture2D" uid="uid://bgu0jefhtof18" path="res://Sprites/enemy 1.png" id="3_f2tw1"]
+[ext_resource type="Texture2D" uid="uid://cwtpcmmj3xqfe" path="res://Sprites/enemy 2.png" id="4_ltp0c"]
+[ext_resource type="Texture2D" uid="uid://nw5gv8bii5l0" path="res://Sprites/enemy 3.png" id="5_4sdhx"]
+[ext_resource type="Texture2D" uid="uid://c2bpqtwty4cfc" path="res://Sprites/enemy 4.png" id="6_lv3s5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mako7"]
 radius = 392.0051
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_50k3d"]
 radius = 392.0319
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fpsni"]
+animations = [{
+"frames": [{
+"duration": 1.6,
+"texture": ExtResource("3_f2tw1")
+}, {
+"duration": 1.6,
+"texture": ExtResource("4_ltp0c")
+}, {
+"duration": 1.6,
+"texture": ExtResource("5_4sdhx")
+}, {
+"duration": 1.6,
+"texture": ExtResource("6_lv3s5")
+}, {
+"duration": 1.6,
+"texture": ExtResource("5_4sdhx")
+}, {
+"duration": 1.6,
+"texture": ExtResource("4_ltp0c")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Enemy" type="CharacterBody2D" unique_id=372405923 groups=["Enemies"]]
 script = ExtResource("1_ahvxf")
@@ -25,14 +54,15 @@ script = ExtResource("2_bbmji")
 position = Vector2(-3, -8)
 shape = SubResource("CircleShape2D_mako7")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1729443703]
-position = Vector2(15, 50)
-scale = Vector2(1.95125, 1.95125)
-texture = ExtResource("3_7ip6y")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1685359387]
 position = Vector2(-3, -8)
 shape = SubResource("CircleShape2D_50k3d")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1436404240]
+position = Vector2(24.000015, -1.5258789e-05)
+scale = Vector2(4.890625, 4.890625)
+sprite_frames = SubResource("SpriteFrames_fpsni")
+autoplay = "default"
 
 [connection signal="navigation_finished" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_navigation_finished"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

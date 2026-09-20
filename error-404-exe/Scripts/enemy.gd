@@ -7,9 +7,6 @@ const SPEED = 330.0
 @onready var animated_sprite = $AnimatedSprite2D
 
 var player: CharacterBody2D
-signal enemy_delete
-signal stop_spawn
-signal start_spawn
 
 # Track last horizontal direction (1 = right, -1 = left)
 var last_facing_x: float = 1.0
@@ -30,16 +27,9 @@ func _physics_process(delta: float) -> void:
 	#gets player position
 	if player != null:
 		nav2d.target_position = player.global_position
-		
-	start_spawn.emit()
-	if not nav2d.is_target_reachable():
-		nav2d.navigation_finished
-		stop_spawn.emit()
-		return
 	#checks if the navigation is finished and then sets speed to zreo
 	if nav2d.is_navigation_finished():
 		velocity = Vector2.ZERO
-		stop_spawn.emit()
 		move_and_slide()
 		# Play idle animation when stopped
 		animated_sprite.flip_h = (last_facing_x == -1.0)

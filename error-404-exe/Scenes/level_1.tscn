@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://c17cuyysif6pp" path="res://Prefab/portal.tscn" id="20_6ssoq"]
 [ext_resource type="Texture2D" uid="uid://dgx02tt5t4vwe" path="res://Temp Sprites/Down a.png" id="20_dlmop"]
 [ext_resource type="Texture2D" uid="uid://ee6x1mxtnuy5" path="res://Temp Sprites/Up a.png" id="21_sda17"]
+[ext_resource type="PackedScene" uid="uid://ce18ltn55c2g5" path="res://Prefab/enemy.tscn" id="26_vr6f4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ssoq"]
 texture = ExtResource("1_xfk5q")
@@ -188,25 +189,11 @@ sources/2 = SubResource("TileSetAtlasSource_vyomg")
 sources/18 = SubResource("TileSetAtlasSource_bd6hb")
 sources/19 = SubResource("TileSetAtlasSource_x68w5")
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_yltlr"]
-vertices = PackedVector2Array(1943.6875, 2720.8672, 2525.7734, 2732.6328, 2366, 3402.1328, 1824.6406, 3608, 1192, 3416.7188, 1192, 3119.4297, 1801.4375, 2792, 40, 1552, 40, 587.22656, 652.4297, 740.34375, 1250.0313, 1289.4922, 40, 1816, -864, 1816, -864, 1552, 1994.8906, 1219.6484, 1998.2891, 1219.3281, 2097.4063, 1852.1094, 1952.8672, 1303.6875, 1872.5703, 1384, 2152, 2512.5703, 1654.5625, 2792, 1512.3125, 2720.8672, 1104.5703, 3032, 1368, 2576.5703, 472, 3032, 40, 3608, 1583.4297, 1384, 1943.6875, 2079.1328, 1821.8125, 2018.1797, 1752.7188, 1880, 1368, 1967.4297, 2152, 2287.4297, 1431.5, 1272.4688, 1512.3203, 1312.8828, 1455.4297, 1880, 472, 3480.7188, 1047.6719, 3488.8828, 976.5703, 3560, 630.5625, 3560)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6), PackedInt32Array(7, 8, 9, 10), PackedInt32Array(11, 12, 13, 7), PackedInt32Array(14, 15, 16, 17), PackedInt32Array(18, 17, 16), PackedInt32Array(11, 7, 10), PackedInt32Array(0, 19, 1), PackedInt32Array(20, 6, 5), PackedInt32Array(21, 20, 5, 22), PackedInt32Array(23, 21, 22, 24), PackedInt32Array(25, 11, 10, 24), PackedInt32Array(26, 18, 16, 27, 28, 29), PackedInt32Array(30, 23, 24, 10), PackedInt32Array(1, 19, 31), PackedInt32Array(16, 1, 31), PackedInt32Array(16, 31, 27), PackedInt32Array(32, 33, 26, 29, 34, 10), PackedInt32Array(10, 34, 30), PackedInt32Array(25, 24, 35), PackedInt32Array(36, 4, 3, 37), PackedInt32Array(37, 3, 25, 38), PackedInt32Array(25, 35, 38)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-904, 1512, 0, 1512, 0, 536, 672, 704, 1264, 1248, 2032, 1176, 2136, 1840, 2568, 2728, 2400, 3432, 1832, 3648, 0, 3648, 0, 1856, -904, 1856)])
-border_size = 134.0
-agent_radius = 40.0
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_3kso8"]
-vertices = PackedVector2Array(4212.1797, 1221.1797, 3560, 1550.0078, 3560, 1327.4297, 2776, 1071.4297, 2776, 1541.9609, 2531.2422, 1468.0234, 2024, 1050.2813, 2024, 953.5078, 5000.953, 24, 5066.5234, 280, 4719.4297, 280, 3360, 24, 4637.039, 362.39063, 4568, 784.5703, 4696.453, 913.0078, 3479.6875, 1247.1328, 4568, 569.5078, 3295.1016, 1126.5391, 3157.4063, 920, 3112.4063, 24, 3104.4219, -752, 3360, -752, 3351.6719, 1183.1094, 1965.2578, 168.5, 2406.3828, 24, 2927.4297, 920, 1772.4609, 598.59375, 1872.5703, 664, 1954.9609, 746.3906, 1806.8828, 664)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 6, 7), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(11, 10, 12), PackedInt32Array(11, 13, 14, 0, 2, 15), PackedInt32Array(11, 12, 16), PackedInt32Array(17, 18, 19, 20, 21, 11, 22), PackedInt32Array(11, 16, 13), PackedInt32Array(11, 15, 22), PackedInt32Array(23, 24, 19, 18, 25, 26), PackedInt32Array(26, 25, 3, 27), PackedInt32Array(3, 7, 28), PackedInt32Array(27, 29, 26), PackedInt32Array(27, 3, 28)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(3064, -792, 3400, -792, 3400, -16, 5032, -16, 5200, 640, 4232, 1256, 3280, 1736, 2512, 1504, 1968, 1056, 1728, 600, 1936, 136, 2400, -16, 3072, -16)])
-agent_radius = 40.0
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_imks0"]
-vertices = PackedVector2Array(4154.0625, 1571.8125, 4575.2188, 1320.2031, 4568, 1327.4297, 4868.922, 1176, 4816.6094, 1176, 5389.8906, 833.52344, 5096, 2832.5703, 6142.3438, 2657.9063, 5652.797, 3248.4688, 5140.453, 1243.8828, 4568, 1680.5703, 2448.9219, 3500.7969, 2582.7422, 3215.2969, 2600.3125, 3232.8672, 2920.3281, 3616.7266, 2742.5625, 3304, 3344.5703, 3304, 2804.8203, 2841.5469, 2673.6172, 2874.3438, 2679.7422, 2342.3203, 5096, 2479.4297, 3001.5078, 2776, 3189.0703, 2024, 3206.4922, 2776, 3416.7188, 2024, 3151.5781, 3616, 3159.5703, 4376, 2912.4219, 4376, 3853.3125, 3616, 3432, 3216.5703, 6175.3203, 1482.2891, 6729.5703, 1494.1406, 6723.0313, 2108.75, 5775, 559.4922, 6051.2266, 937.4922, 3432, 2851.1719, 5024.883, 2903.6719, 4963.7813, 3025.8906, 4896.867, 3159.6875, 5224, 1327.4297, 6136.883, 1264.5, 5224, 1604.9219, 4111.742, 3467.2031, 6206.711, 2530.2813, 5151.2266, 1896, 6675.5234, 2421.1797, 4951.6875, 2335.1328, 4783.4297, 1896, 4681.4375, 2200, 4335.4297, 2200, 3507.8984, 1841.6094, 4184, 2351.4297, 3491.7813, 1873.8906, 4184, 2825.4375, 4255.133, 2967.6875, 4456.3125, 3168.8672, 4598.5625, 3240, 4721.258, 3272.1563, 4816.5703, 3240)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5), PackedInt32Array(6, 7, 8), PackedInt32Array(9, 3, 5), PackedInt32Array(0, 2, 10), PackedInt32Array(11, 12, 13), PackedInt32Array(14, 11, 13), PackedInt32Array(14, 13, 15), PackedInt32Array(14, 15, 16), PackedInt32Array(17, 18, 19), PackedInt32Array(7, 6, 20), PackedInt32Array(21, 17, 19), PackedInt32Array(21, 19, 22), PackedInt32Array(23, 21, 22), PackedInt32Array(23, 22, 24), PackedInt32Array(25, 26, 27), PackedInt32Array(25, 27, 14), PackedInt32Array(25, 14, 16), PackedInt32Array(28, 25, 16), PackedInt32Array(28, 16, 29), PackedInt32Array(30, 31, 32), PackedInt32Array(5, 33, 34), PackedInt32Array(35, 23, 24), PackedInt32Array(36, 6, 8), PackedInt32Array(37, 36, 8), PackedInt32Array(38, 37, 8), PackedInt32Array(39, 9, 5), PackedInt32Array(39, 5, 34), PackedInt32Array(39, 34, 40), PackedInt32Array(41, 39, 40), PackedInt32Array(41, 40, 30), PackedInt32Array(42, 28, 29), PackedInt32Array(43, 7, 20), PackedInt32Array(42, 29, 35), PackedInt32Array(44, 41, 30), PackedInt32Array(44, 30, 32), PackedInt32Array(44, 32, 45), PackedInt32Array(44, 45, 43), PackedInt32Array(44, 43, 20), PackedInt32Array(44, 20, 46), PackedInt32Array(47, 44, 46), PackedInt32Array(47, 46, 48), PackedInt32Array(47, 48, 49), PackedInt32Array(10, 47, 49), PackedInt32Array(0, 10, 49), PackedInt32Array(50, 0, 49), PackedInt32Array(50, 49, 51), PackedInt32Array(52, 50, 51), PackedInt32Array(24, 52, 51), PackedInt32Array(35, 24, 51), PackedInt32Array(35, 51, 53), PackedInt32Array(42, 35, 53), PackedInt32Array(42, 53, 54), PackedInt32Array(42, 54, 55), PackedInt32Array(42, 55, 56), PackedInt32Array(57, 42, 56), PackedInt32Array(57, 56, 58), PackedInt32Array(8, 57, 58), PackedInt32Array(8, 58, 38)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(3200, 4416, 2872, 4416, 2880, 3648, 2392, 3528, 2632, 3016, 2640, 2320, 3408, 1840, 4136, 1536, 5368, 800, 5784, 504, 6088, 920, 6176, 1256, 6209, 1443, 6770, 1455, 6763, 2112, 6711, 2454, 6234, 2565, 6176, 2680, 5672, 3288, 4728, 3312, 4128, 3504, 3864, 3656, 3192, 3656)])
-sample_partition_type = 1
-agent_radius = 40.0
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_1f27d"]
+vertices = PackedVector2Array(5234, 1606.1563, 6158, 1378, 6798, 1378, 6798, 2574, 6158, 2574, 5106, 2475.289, 5159.039, 1906, 3442, 3220.711, 4450.383, 3177.0938, 4596.203, 3250, 3348.711, 3314, 4246.9063, 2973.6172, 3442, 2843.961, 5086.8984, 1010, 5161.078, 861.6328, 5234, 788.71094, 6158, 34, 5234, 1323.2891, 5145.5625, 1234.8516, 5234, 363.28906, 4174, 2827.7969, 3208.1094, 2766, 5106, 2836.711, 6158, 3598, 4870.1563, 1166, 4779.289, 1010, 4715.289, 1166, 4558, 788.71094, 4957.617, 2326.9063, 4779.289, 1906, 4683.797, 2190, 2034, 1163.7969, 2034, 951.8906, 2766, 1067.2891, 2766, 1748.7109, 1961.0938, 1309.6172, 3422.8984, 2034, 4174, 2347.289, 2162, 2516.711, 2162, 2283.289, 3124.2031, 2034, 3570, 1739.7969, 3570, 1323.2891, 4558, 1323.2891, 4558, 1684.7109, 4331.289, 2190, 50, 1806, -846, 1806, -846, 1570, 50, 1570, 5033.078, 2909.6328, 4972.7188, 3030.3594, 4905.0938, 3165.6172, 1876.7109, 1394, 2978.3828, 1961.0938, 1949.6172, 2070.9063, 1829.2578, 2010.7266, 1758.8984, 1870, 1579.2891, 1394, 1506.3594, 1321.0781, 1451.2891, 1870, 1370.7266, 1253.2734, 3485.6172, 1238.9063, 4558, 567.8906, 3357.6406, 1174.9219, 3302.8438, 1120.1172, 3162.7578, 910, 5140.711, 270, 50, 34, 4715.289, 270, 4628.297, 356.9922, 2923.289, 910, 1876.7109, 654, 4820.711, 3250, 1053.6328, 3497.0781, 1202, 3422.8984, 980.71094, 3570, 1963.7031, 740.9922, 1358, 1963.2891, 1294, 1099.7969, 1387.2891, 654, 1294, 747.28906, 462, 3022, 1358, 2580.711, 1108.7109, 3022, 50, 3598, 628.2031, 3570, 462, 3486.8984, 1506.3828, 2729.0938, 1202, 3115.289, 1652.2031, 2802, 1803.7969, 2802, 2510, 3156.711, 2594.3828, 3241.0938, 2999.8906, 2766, 2802.1016, 2831.9297, 2510, 2904.961, 1949.6172, 2729.0938, 2740.2031, 3314)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6), PackedInt32Array(7, 8, 9, 10), PackedInt32Array(11, 8, 7, 12), PackedInt32Array(13, 14, 15, 16, 1, 17, 18), PackedInt32Array(16, 15, 19), PackedInt32Array(20, 11, 12, 21), PackedInt32Array(22, 5, 4, 23), PackedInt32Array(1, 0, 17), PackedInt32Array(13, 18, 24, 25), PackedInt32Array(25, 24, 26, 27), PackedInt32Array(6, 5, 28, 29), PackedInt32Array(29, 28, 30), PackedInt32Array(31, 32, 33, 34), PackedInt32Array(35, 31, 34), PackedInt32Array(36, 37, 20, 21, 38, 39, 40), PackedInt32Array(41, 42, 43, 44, 45, 37), PackedInt32Array(46, 47, 48, 49), PackedInt32Array(50, 22, 23, 51), PackedInt32Array(52, 51, 23), PackedInt32Array(53, 35, 34, 54, 39, 55), PackedInt32Array(29, 30, 45, 44), PackedInt32Array(36, 41, 37), PackedInt32Array(54, 40, 39), PackedInt32Array(53, 55, 56, 57, 58), PackedInt32Array(59, 58, 57, 60, 61), PackedInt32Array(27, 26, 43, 42, 62), PackedInt32Array(63, 27, 62, 64, 65, 66), PackedInt32Array(16, 19, 67), PackedInt32Array(68, 16, 67, 69), PackedInt32Array(68, 69, 70), PackedInt32Array(68, 70, 63, 66, 71, 72), PackedInt32Array(73, 52, 23), PackedInt32Array(74, 75, 10, 73, 23, 76), PackedInt32Array(33, 32, 77, 71), PackedInt32Array(61, 60, 78, 46, 49, 79), PackedInt32Array(71, 77, 72), PackedInt32Array(68, 72, 80), PackedInt32Array(49, 68, 80, 81), PackedInt32Array(49, 81, 79), PackedInt32Array(82, 46, 78, 83, 84), PackedInt32Array(76, 23, 85, 86), PackedInt32Array(87, 86, 85), PackedInt32Array(87, 85, 46, 82), PackedInt32Array(84, 83, 88, 89), PackedInt32Array(89, 88, 90, 75), PackedInt32Array(75, 90, 91, 92, 93), PackedInt32Array(38, 21, 94), PackedInt32Array(38, 94, 95, 96, 97), PackedInt32Array(97, 96, 92, 91), PackedInt32Array(75, 93, 98), PackedInt32Array(75, 98, 10), PackedInt32Array(73, 10, 9)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, 1520, 0, -16, 6208, -16, 6208, 1328, 6848, 1328, 6848, 2624, 6208, 2624, 6208, 3648, 0, 3648, 0, 1856, -896, 1856, -896, 1520)])
+agent_radius = 50.0
 
 [node name="Level 1" type="Node2D" unique_id=878887162]
 script = ExtResource("1_imks0")
@@ -336,14 +323,13 @@ movement"
 
 [node name="Label2" type="Label" parent="Game UI" unique_id=2052614141]
 layout_mode = 0
-offset_left = -425.0
-offset_top = 1315.0
-offset_right = -10.0
-offset_bottom = 1446.0
+offset_left = -424.0
+offset_top = 1383.0
+offset_right = -9.0
+offset_bottom = 1447.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 46
-text = "Run!!
-Survive for 1.5 min"
+text = "Run!!"
 horizontal_alignment = 2
 
 [node name="Label3" type="Label" parent="Game UI" unique_id=1787185373]
@@ -358,42 +344,26 @@ text = "Press space to dash"
 
 [node name="Label4" type="Label" parent="Game UI" unique_id=722425]
 layout_mode = 0
-offset_left = -365.0
-offset_top = 1260.0
-offset_right = -18.0
-offset_bottom = 1330.0
+offset_left = -357.0
+offset_top = 1355.0
+offset_right = -10.0
+offset_bottom = 1425.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 31
 text = "Escape from enemies"
 uppercase = true
 
-[node name="conector" type="Timer" parent="." unique_id=1453616420]
-wait_time = 0.1
-autostart = true
-
-[node name="enemy_spawn_timer2" type="Timer" parent="." unique_id=1163518338]
+[node name="enemy_spawn_timer" type="Timer" parent="." unique_id=1163518338]
 wait_time = 5.0
+one_shot = true
 autostart = true
-
-[node name="enemy_spawn_timer3" type="Timer" parent="." unique_id=1915481377]
-wait_time = 5.0
-autostart = true
-
-[node name="enemy_spawn_timer4" type="Timer" parent="." unique_id=2079655385]
-wait_time = 4.0
-autostart = true
-
-[node name="Portal" parent="." unique_id=816684105 instance=ExtResource("20_6ssoq")]
-position = Vector2(6662, 1959)
 
 [node name="nav2d" type="Node2D" parent="." unique_id=1314229838]
-visible = false
 
 [node name="nav_reg" type="Node2D" parent="nav2d" unique_id=1904979665]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="nav2d/nav_reg" unique_id=1601757923]
-visible = false
-navigation_polygon = SubResource("NavigationPolygon_yltlr")
+navigation_polygon = SubResource("NavigationPolygon_1f27d")
 
 [node name="Polygon2D" type="Polygon2D" parent="nav2d/nav_reg/NavigationRegion2D" unique_id=1338327156]
 color = Color(1, 1, 1, 0)
@@ -427,104 +397,28 @@ polygon = PackedVector2Array(1408, 1984, 1472, 1920, 1720, 1920, 1728, 1920, 179
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(1344, 768, 1408, 704, 1856, 704, 1920, 768, 1984, 960, 1984, 1152, 1920, 1280, 1856, 1344, 1600, 1344, 1536, 1280, 1408, 1216, 1344, 1088)
 
-[node name="NavigationRegion2D2" type="NavigationRegion2D" parent="nav2d/nav_reg" unique_id=1144421597]
-visible = false
-navigation_polygon = SubResource("NavigationPolygon_3kso8")
+[node name="Portal" parent="." unique_id=816684105 instance=ExtResource("20_6ssoq")]
+position = Vector2(376, 1752)
 
-[node name="Polygon2D" type="Polygon2D" parent="nav2d/nav_reg/NavigationRegion2D2" unique_id=1891496728]
-color = Color(1, 1, 1, 0)
-polygon = PackedVector2Array(4800, 3200, 4608, 3200, 4480, 3136, 4288, 2944, 4224, 2816, 4224, 2368, 4352, 2240, 4672, 2240, 4928, 2368, 5056, 2496, 5056, 2816, 4992, 2880, 4928, 3008, 4864, 3136)
+[node name="Enemy" parent="." unique_id=372405923 instance=ExtResource("26_vr6f4")]
+position = Vector2(-704, 1688)
 
-[node name="Polygon2D2" type="Polygon2D" parent="nav2d/nav_reg/NavigationRegion2D2" unique_id=1545551030]
-color = Color(1, 1, 1, 0)
-polygon = PackedVector2Array(4736, 1216, 4864, 1216, 5120, 1280, 5184, 1344, 5184, 1600, 5120, 1856, 4800, 1856, 4608, 1664, 4608, 1344)
+[node name="Enemy2" parent="." unique_id=236990957 instance=ExtResource("26_vr6f4")]
+position = Vector2(1936, 328)
 
-[node name="Polygon2D3" type="Polygon2D" parent="nav2d/nav_reg/NavigationRegion2D2" unique_id=192327184]
-color = Color(1, 1, 1, 0)
-polygon = PackedVector2Array(4736, 320, 5120, 320, 5184, 384, 5184, 768, 5120, 832, 5056, 960, 4800, 960, 4608, 768, 4608, 576, 4672, 384)
+[node name="Enemy3" parent="." unique_id=702897798 instance=ExtResource("26_vr6f4")]
+position = Vector2(1872, 3208)
 
-[node name="Polygon2D4" type="Polygon2D" parent="nav2d/nav_reg/NavigationRegion2D2" unique_id=1032337821]
-color = Color(1, 1, 1, 0)
-polygon = PackedVector2Array(3392, 1984, 3136, 1984, 3008, 1920, 2816, 1728, 2816, 1088, 2944, 960, 3136, 960, 3264, 1152, 3328, 1216, 3456, 1280, 3520, 1344, 3520, 1728, 3456, 1856)
+[node name="Enemy5" parent="." unique_id=905750486 instance=ExtResource("26_vr6f4")]
+position = Vector2(4040, 880)
 
-[node name="Polygon2D5" type="Polygon2D" parent="nav2d/nav_reg/NavigationRegion2D2" unique_id=2094699812]
-color = Color(1, 1, 1, 0)
-polygon = PackedVector2Array(2560, 2944, 2816, 2880, 3008, 2816, 3200, 2816, 3392, 2880, 3392, 3200, 3328, 3264, 2752, 3264, 2624, 3200, 2560, 3136)
+[node name="Enemy6" parent="." unique_id=349974800 instance=ExtResource("26_vr6f4")]
+position = Vector2(2776, 1872)
 
-[node name="Polygon2D6" type="Polygon2D" parent="nav2d/nav_reg/NavigationRegion2D2" unique_id=816143559]
-color = Color(1, 1, 1, 0)
-polygon = PackedVector2Array(512, 3456, 512, 3072, 1088, 3072, 1152, 3136, 1152, 3392, 1024, 3456, 960, 3520, 640, 3520)
+[node name="Enemy7" parent="." unique_id=1342047197 instance=ExtResource("26_vr6f4")]
+position = Vector2(4328, 3288)
 
-[node name="Polygon2D7" type="Polygon2D" parent="nav2d/nav_reg/NavigationRegion2D2" unique_id=1567318286]
-color = Color(1, 1, 1, 0)
-polygon = PackedVector2Array(1408, 1984, 1472, 1920, 1720, 1920, 1728, 1920, 1792, 2048, 1920, 2112, 2112, 2304, 2112, 2496, 1920, 2688, 1792, 2752, 1664, 2752, 1536, 2688, 1408, 2560)
+[node name="Enemy8" parent="." unique_id=2119664548 instance=ExtResource("26_vr6f4")]
+position = Vector2(5768, 1128)
 
-[node name="Polygon2D8" type="Polygon2D" parent="nav2d/nav_reg/NavigationRegion2D2" unique_id=1458004776]
-color = Color(1, 1, 1, 0)
-polygon = PackedVector2Array(1344, 768, 1408, 704, 1856, 704, 1920, 768, 1984, 960, 1984, 1152, 1920, 1280, 1856, 1344, 1600, 1344, 1536, 1280, 1408, 1216, 1344, 1088)
-
-[node name="NavigationRegion2D3" type="NavigationRegion2D" parent="nav2d/nav_reg" unique_id=938115562]
-visible = false
-navigation_polygon = SubResource("NavigationPolygon_imks0")
-
-[node name="Polygon2D" type="Polygon2D" parent="nav2d/nav_reg/NavigationRegion2D3" unique_id=372990359]
-color = Color(1, 1, 1, 0)
-polygon = PackedVector2Array(4800, 3200, 4608, 3200, 4480, 3136, 4288, 2944, 4224, 2816, 4224, 2368, 4352, 2240, 4672, 2240, 4928, 2368, 5056, 2496, 5056, 2816, 4992, 2880, 4928, 3008, 4864, 3136)
-
-[node name="Polygon2D2" type="Polygon2D" parent="nav2d/nav_reg/NavigationRegion2D3" unique_id=368412862]
-color = Color(1, 1, 1, 0)
-polygon = PackedVector2Array(4736, 1216, 4864, 1216, 5120, 1280, 5184, 1344, 5184, 1600, 5120, 1856, 4800, 1856, 4608, 1664, 4608, 1344)
-
-[node name="Polygon2D3" type="Polygon2D" parent="nav2d/nav_reg/NavigationRegion2D3" unique_id=76046162]
-color = Color(1, 1, 1, 0)
-polygon = PackedVector2Array(4736, 320, 5120, 320, 5184, 384, 5184, 768, 5120, 832, 5056, 960, 4800, 960, 4608, 768, 4608, 576, 4672, 384)
-
-[node name="Polygon2D4" type="Polygon2D" parent="nav2d/nav_reg/NavigationRegion2D3" unique_id=1114318947]
-color = Color(1, 1, 1, 0)
-polygon = PackedVector2Array(3392, 1984, 3136, 1984, 3008, 1920, 2816, 1728, 2816, 1088, 2944, 960, 3136, 960, 3264, 1152, 3328, 1216, 3456, 1280, 3520, 1344, 3520, 1728, 3456, 1856)
-
-[node name="Polygon2D5" type="Polygon2D" parent="nav2d/nav_reg/NavigationRegion2D3" unique_id=276029345]
-color = Color(1, 1, 1, 0)
-polygon = PackedVector2Array(2560, 2944, 2816, 2880, 3008, 2816, 3200, 2816, 3392, 2880, 3392, 3200, 3328, 3264, 2752, 3264, 2624, 3200, 2560, 3136)
-
-[node name="Polygon2D6" type="Polygon2D" parent="nav2d/nav_reg/NavigationRegion2D3" unique_id=1818989874]
-color = Color(1, 1, 1, 0)
-polygon = PackedVector2Array(512, 3456, 512, 3072, 1088, 3072, 1152, 3136, 1152, 3392, 1024, 3456, 960, 3520, 640, 3520)
-
-[node name="Polygon2D7" type="Polygon2D" parent="nav2d/nav_reg/NavigationRegion2D3" unique_id=639715040]
-color = Color(1, 1, 1, 0)
-polygon = PackedVector2Array(1408, 1984, 1472, 1920, 1720, 1920, 1728, 1920, 1792, 2048, 1920, 2112, 2112, 2304, 2112, 2496, 1920, 2688, 1792, 2752, 1664, 2752, 1536, 2688, 1408, 2560)
-
-[node name="Polygon2D8" type="Polygon2D" parent="nav2d/nav_reg/NavigationRegion2D3" unique_id=461985226]
-color = Color(1, 1, 1, 0)
-polygon = PackedVector2Array(1344, 768, 1408, 704, 1856, 704, 1920, 768, 1984, 960, 1984, 1152, 1920, 1280, 1856, 1344, 1600, 1344, 1536, 1280, 1408, 1216, 1344, 1088)
-
-[node name="nav2d_spawn_reg" type="Node2D" parent="nav2d" unique_id=389709165]
-
-[node name="reg_1" type="Area2D" parent="nav2d/nav2d_spawn_reg" unique_id=895524036]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="nav2d/nav2d_spawn_reg/reg_1" unique_id=1029418529]
-polygon = PackedVector2Array(-864, 1816, -864, 1552, 48, 1552, 40, 592, 656, 744, 1248, 1288, 1432, 1272, 1512, 1312, 1584, 1384, 1872, 1384, 1952, 1304, 2000, 1224, 2096, 1856, 2528, 2736, 2368, 3408, 1824, 3616, 40, 3608, 40, 1816)
-
-[node name="reg_2" type="Area2D" parent="nav2d/nav2d_spawn_reg" unique_id=151380407]
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="nav2d/nav2d_spawn_reg/reg_2" unique_id=1304881291]
-polygon = PackedVector2Array(3104, -752, 3352, -752, 3360, 24, 5000, 24, 5064, 280, 4720, 280, 4640, 360, 4568, 576, 4568, 792, 4696, 912, 4208, 1224, 3560, 1552, 3560, 1328, 3480, 1240, 3344, 1184, 3280, 1112, 3160, 920, 2920, 920, 2776, 1072, 2776, 1544, 2528, 1464, 2016, 1048, 2024, 952, 1960, 744, 1872, 664, 1800, 664, 1768, 600, 1968, 168, 2408, 24, 3112, 24)
-
-[node name="reg_3" type="Area2D" parent="nav2d/nav2d_spawn_reg" unique_id=846096245]
-
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="nav2d/nav2d_spawn_reg/reg_3" unique_id=1183500881]
-polygon = PackedVector2Array(3160, 4376, 2912, 4376, 2920, 3616, 2448, 3496, 2584, 3216, 2600, 3232, 2744, 3304, 3344, 3304, 3432, 3216, 3432, 2848, 3208, 2776, 3000, 2776, 2800, 2840, 2672, 2872, 2680, 2344, 3184, 2024, 3416, 2024, 3512, 1840, 4152, 1568, 4576, 1320, 4568, 1688, 4784, 1896, 5152, 1896, 5224, 1600, 5224, 1320, 5144, 1240, 4872, 1176, 4816, 1176, 5392, 832, 5776, 560, 6048, 936, 6136, 1264, 6175, 1486, 6719, 1494, 6722, 2111, 6678, 2423, 6203, 2532, 6144, 2656, 5648, 3248, 4720, 3272, 4120, 3464, 3848, 3616, 3152, 3616)
-
-[connection signal="timeout" from="conector" to="." method="_on_conector_timeout"]
-[connection signal="timeout" from="enemy_spawn_timer2" to="." method="_on_enemy_spawn_timer_2_timeout"]
-[connection signal="timeout" from="enemy_spawn_timer3" to="." method="_on_enemy_spawn_timer_3_timeout"]
-[connection signal="timeout" from="enemy_spawn_timer3" to="character" method="_on_enemy_spawn_timer_timeout"]
-[connection signal="timeout" from="enemy_spawn_timer4" to="." method="_on_enemy_spawn_timer_4_timeout"]
-[connection signal="timeout" from="enemy_spawn_timer4" to="character" method="_on_enemy_spawn_timer_timeout"]
-[connection signal="area_entered" from="nav2d/nav2d_spawn_reg/reg_1" to="." method="_on_reg_1_area_entered"]
-[connection signal="area_exited" from="nav2d/nav2d_spawn_reg/reg_1" to="." method="_on_reg_1_area_exited"]
-[connection signal="area_entered" from="nav2d/nav2d_spawn_reg/reg_2" to="." method="_on_reg_2_area_entered"]
-[connection signal="area_exited" from="nav2d/nav2d_spawn_reg/reg_2" to="." method="_on_reg_2_area_exited"]
-[connection signal="area_entered" from="nav2d/nav2d_spawn_reg/reg_3" to="." method="_on_reg_3_area_entered"]
-[connection signal="area_exited" from="nav2d/nav2d_spawn_reg/reg_3" to="." method="_on_reg_3_area_exited"]
+[connection signal="timeout" from="enemy_spawn_timer" to="." method="_on_enemy_spawn_timer_timeout"]

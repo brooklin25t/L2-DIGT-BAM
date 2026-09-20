@@ -327,7 +327,7 @@ one_shot = true
 wait_time = 60.0
 
 [node name="Portal" parent="." unique_id=816684105 instance=ExtResource("24_2awvy")]
-position = Vector2(11680, 2742)
+position = Vector2(13750, 247)
 
 [node name="Control" type="Control" parent="." unique_id=263832450]
 layout_mode = 3
