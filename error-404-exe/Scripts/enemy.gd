@@ -28,6 +28,10 @@ func _physics_process(delta: float) -> void:
 	if player != null:
 		nav2d.target_position = player.global_position
 	#checks if the navigation is finished and then sets speed to zreo
+	if not nav2d.is_target_reachable():
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
 	if nav2d.is_navigation_finished():
 		velocity = Vector2.ZERO
 		move_and_slide()

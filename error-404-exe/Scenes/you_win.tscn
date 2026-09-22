@@ -78,3 +78,6 @@ text = "YOU WIN"
 label_settings = SubResource("LabelSettings_vmhid")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="Control/start-button" to="." method="_on_startbutton_pressed"]
+[connection signal="pressed" from="Control/credits-button" to="." method="_on_creditsbutton_pressed"]

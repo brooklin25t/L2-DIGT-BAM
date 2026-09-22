@@ -359,6 +359,7 @@ one_shot = true
 autostart = true
 
 [node name="nav2d" type="Node2D" parent="." unique_id=1314229838]
+visible = false
 
 [node name="nav_reg" type="Node2D" parent="nav2d" unique_id=1904979665]
 
@@ -398,7 +399,7 @@ color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(1344, 768, 1408, 704, 1856, 704, 1920, 768, 1984, 960, 1984, 1152, 1920, 1280, 1856, 1344, 1600, 1344, 1536, 1280, 1408, 1216, 1344, 1088)
 
 [node name="Portal" parent="." unique_id=816684105 instance=ExtResource("20_6ssoq")]
-position = Vector2(376, 1752)
+position = Vector2(6703, 2041)
 
 [node name="Enemy" parent="." unique_id=372405923 instance=ExtResource("26_vr6f4")]
 position = Vector2(-704, 1688)
