@@ -205,9 +205,6 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAA
 tile_set = SubResource("TileSet_ryixy")
 metadata/_edit_lock_ = true
 
-[node name="character" parent="." unique_id=343074308 instance=ExtResource("1_vk57k")]
-position = Vector2(104, 1696)
-
 [node name="arrows" type="Control" parent="." unique_id=1281370604]
 layout_mode = 3
 anchors_preset = 0
@@ -215,6 +212,10 @@ offset_left = 3920.0
 offset_top = 765.0
 offset_right = 3960.0
 offset_bottom = 805.0
+
+[node name="UpA3" type="Sprite2D" parent="arrows" unique_id=1132621390]
+position = Vector2(-1573, 2114)
+texture = ExtResource("21_sda17")
 
 [node name="RightA" type="Sprite2D" parent="arrows" unique_id=1293936878]
 position = Vector2(-3300, 924)
@@ -251,10 +252,6 @@ texture = ExtResource("20_dlmop")
 [node name="RightA5" type="Sprite2D" parent="arrows" unique_id=1480244788]
 position = Vector2(-3053, 2158)
 texture = ExtResource("19_imks0")
-
-[node name="UpA3" type="Sprite2D" parent="arrows" unique_id=1132621390]
-position = Vector2(-1573, 2114)
-texture = ExtResource("21_sda17")
 
 [node name="DownA3" type="Sprite2D" parent="arrows" unique_id=493347287]
 position = Vector2(-1570, 2231)
@@ -302,6 +299,9 @@ texture = ExtResource("19_imks0")
 
 [node name="DownA6" type="Sprite2D" parent="arrows" unique_id=691422998]
 texture = ExtResource("20_dlmop")
+
+[node name="character" parent="arrows" unique_id=343074308 instance=ExtResource("1_vk57k")]
+position = Vector2(-3816, 931)
 
 [node name="Game UI" type="Control" parent="." unique_id=213933204]
 layout_mode = 3

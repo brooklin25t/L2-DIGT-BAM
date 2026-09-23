@@ -295,56 +295,6 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAA
 tile_set = SubResource("TileSet_ona7d")
 metadata/_edit_lock_ = true
 
-[node name="Player" parent="." unique_id=1002642745 instance=ExtResource("18_nbwsh")]
-position = Vector2(168, 144)
-
-[node name="Enemy" parent="." unique_id=372405923 instance=ExtResource("21_8jhox")]
-position = Vector2(2832, 2000)
-
-[node name="Enemy2" parent="." unique_id=333370971 instance=ExtResource("21_8jhox")]
-position = Vector2(2408, 960)
-
-[node name="Enemy3" parent="." unique_id=1802900385 instance=ExtResource("21_8jhox")]
-position = Vector2(3204, 2106)
-
-[node name="Enemy4" parent="." unique_id=554401653 instance=ExtResource("21_8jhox")]
-position = Vector2(3936, 1120)
-
-[node name="Enemy5" parent="." unique_id=1373065745 instance=ExtResource("22_hed5s")]
-position = Vector2(11688, -242)
-
-[node name="Area2D" type="Area2D" parent="." unique_id=1250133750]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1403061908]
-position = Vector2(9488, 2584)
-shape = SubResource("RectangleShape2D_hms56")
-
-[node name="bullet_spawn" type="Timer" parent="." unique_id=159008903]
-wait_time = 2.0
-one_shot = true
-
-[node name="survival_timer" type="Timer" parent="." unique_id=219746662]
-wait_time = 60.0
-
-[node name="Portal" parent="." unique_id=816684105 instance=ExtResource("24_2awvy")]
-position = Vector2(13750, 247)
-
-[node name="Control" type="Control" parent="." unique_id=263832450]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Label" type="Label" parent="Control" unique_id=1067696640]
-layout_mode = 0
-offset_left = 296.0
-offset_top = 136.0
-offset_right = 538.0
-offset_bottom = 159.0
-text = "Your goal is to survive the boss
-for 1 min"
-label_settings = SubResource("LabelSettings_pygsh")
-
 [node name="Control2" type="Control" parent="." unique_id=697314639]
 layout_mode = 3
 anchors_preset = 0
@@ -392,6 +342,56 @@ texture = ExtResource("25_gmj2a")
 [node name="RightA7" type="Sprite2D" parent="Control2" unique_id=574958223]
 position = Vector2(4936, 2400)
 texture = ExtResource("25_gmj2a")
+
+[node name="Player" parent="." unique_id=1002642745 instance=ExtResource("18_nbwsh")]
+position = Vector2(168, 144)
+
+[node name="Enemy" parent="." unique_id=372405923 instance=ExtResource("21_8jhox")]
+position = Vector2(2832, 2000)
+
+[node name="Enemy2" parent="." unique_id=333370971 instance=ExtResource("21_8jhox")]
+position = Vector2(2408, 960)
+
+[node name="Enemy3" parent="." unique_id=1802900385 instance=ExtResource("21_8jhox")]
+position = Vector2(3204, 2106)
+
+[node name="Enemy4" parent="." unique_id=554401653 instance=ExtResource("21_8jhox")]
+position = Vector2(3936, 1120)
+
+[node name="Enemy5" parent="." unique_id=1373065745 instance=ExtResource("22_hed5s")]
+position = Vector2(11688, -242)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1250133750]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1403061908]
+position = Vector2(9488, 2584)
+shape = SubResource("RectangleShape2D_hms56")
+
+[node name="bullet_spawn" type="Timer" parent="." unique_id=159008903]
+wait_time = 2.0
+one_shot = true
+
+[node name="survival_timer" type="Timer" parent="." unique_id=219746662]
+wait_time = 60.0
+
+[node name="Portal" parent="." unique_id=816684105 instance=ExtResource("24_2awvy")]
+position = Vector2(13750, 247)
+
+[node name="Control" type="Control" parent="." unique_id=263832450]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control" unique_id=1067696640]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 136.0
+offset_right = 538.0
+offset_bottom = 159.0
+text = "Your goal is to survive the boss
+and reach the portal"
+label_settings = SubResource("LabelSettings_pygsh")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="bullet_spawn" to="." method="_on_bullet_spawn_timeout"]
