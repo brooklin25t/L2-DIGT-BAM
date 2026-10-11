@@ -34,10 +34,10 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mako7"]
-radius = 49.09175
+radius = 47.010635
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_50k3d"]
-radius = 49.010204
+radius = 53.009434
 
 [node name="Enemy" type="CharacterBody2D" unique_id=372405923 groups=["Enemies"]]
 script = ExtResource("1_axcr2")
