@@ -390,7 +390,8 @@ offset_top = 136.0
 offset_right = 538.0
 offset_bottom = 159.0
 text = "Your goal is to survive the boss
-and reach the portal"
+and reach the portal (in top right corner
+of boss arena)"
 label_settings = SubResource("LabelSettings_pygsh")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
