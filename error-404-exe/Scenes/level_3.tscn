@@ -133,6 +133,7 @@ size = Vector2(96, 471.5)
 script = ExtResource("1_2awvy")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=771139614]
+visible = false
 navigation_polygon = SubResource("NavigationPolygon_s80er")
 
 [node name="Polygon2D" type="Polygon2D" parent="NavigationRegion2D" unique_id=2105361995]
