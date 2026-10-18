@@ -165,11 +165,10 @@ ignore_rotation = false
 zoom = Vector2(0.5, 0.5)
 
 [node name="DashTimer" type="Timer" parent="." unique_id=1015700200]
-wait_time = 0.5
 one_shot = true
 
 [node name="DashCooldownTimer" type="Timer" parent="." unique_id=773645482]
-wait_time = 3.0
+wait_time = 2.0
 one_shot = true
 
 [node name="invulrablity" type="Timer" parent="." unique_id=599255365]
