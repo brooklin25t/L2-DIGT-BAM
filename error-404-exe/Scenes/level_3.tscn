@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dctctwg444ms2" path="res://Scripts/level_3.gd" id="1_2awvy"]
 [ext_resource type="Texture2D" uid="uid://dqbh2fsng6cki" path="res://Sprites/tile-map-base-floor.png" id="2_5e78q"]
 [ext_resource type="Texture2D" uid="uid://cti3yoavx0kou" path="res://Sprites/tile-map-overlay.png" id="3_l4wr6"]
+[ext_resource type="PackedScene" uid="uid://c53t71krgd308" path="res://Prefab/lever.tscn" id="10_5rvg2"]
 [ext_resource type="PackedScene" uid="uid://cs5d5po13a7u7" path="res://Prefab/player.tscn" id="18_nbwsh"]
 [ext_resource type="PackedScene" uid="uid://ce18ltn55c2g5" path="res://Prefab/enemy.tscn" id="21_8jhox"]
 [ext_resource type="PackedScene" uid="uid://26j5y6rb5wrt" path="res://Prefab/boss.tscn" id="22_hed5s"]
@@ -121,9 +122,6 @@ sources/0 = SubResource("TileSetAtlasSource_5rvg2")
 
 [sub_resource type="LabelSettings" id="LabelSettings_pygsh"]
 font_size = 36
-font_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_3kso8"]
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hms56"]
@@ -254,15 +252,6 @@ and reach the portal (in top right corner
 of boss arena)"
 label_settings = SubResource("LabelSettings_pygsh")
 
-[node name="Label2" type="Label" parent="Control" unique_id=818303027]
-layout_mode = 0
-offset_left = 1904.0
-offset_top = 128.0
-offset_right = 1944.0
-offset_bottom = 151.0
-text = "E to interact"
-label_settings = SubResource("LabelSettings_3kso8")
-
 [node name="Control2" type="Control" parent="." unique_id=697314639]
 layout_mode = 3
 anchors_preset = 0
@@ -338,6 +327,9 @@ wait_time = 60.0
 
 [node name="Portal" parent="." unique_id=816684105 instance=ExtResource("24_2awvy")]
 position = Vector2(13750, 247)
+
+[node name="Lever" parent="." unique_id=1145087173 instance=ExtResource("10_5rvg2")]
+position = Vector2(2163, 220)
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="bullet_spawn" to="." method="_on_bullet_spawn_timeout"]
