@@ -48,6 +48,10 @@ autoplay = "default"
 frame_progress = 0.22140685
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=248025127]
+path_desired_distance = 30.0
+target_desired_distance = 40.0
+avoidance_enabled = true
+radius = 100.0
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1333466792 groups=["Enemies"]]
 collision_layer = 3
