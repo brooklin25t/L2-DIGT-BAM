@@ -142,12 +142,12 @@ height = 94.0
 [node name="Player" type="CharacterBody2D" unique_id=1002642745 groups=["Player", "Target"]]
 script = ExtResource("1_mkbva")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=34639006]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=34639006 groups=["Player"]]
 scale = Vector2(1.4, 1.4)
 sprite_frames = SubResource("SpriteFrames_mako7")
 animation = &"Idle x.axis"
 
-[node name="Physics" type="CollisionShape2D" parent="." unique_id=1814544759]
+[node name="Physics" type="CollisionShape2D" parent="." unique_id=1814544759 groups=["Player"]]
 position = Vector2(2, 0)
 shape = SubResource("CapsuleShape2D_ryixy")
 
@@ -155,11 +155,11 @@ shape = SubResource("CapsuleShape2D_ryixy")
 collision_layer = 3
 collision_mask = 3
 
-[node name="Hitbox" type="CollisionShape2D" parent="character" unique_id=1028507353]
+[node name="Hitbox" type="CollisionShape2D" parent="character" unique_id=1028507353 groups=["Player"]]
 position = Vector2(2, 0)
 shape = SubResource("CapsuleShape2D_mako7")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=361214871]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=361214871 groups=["Player"]]
 offset = Vector2(400, 0)
 ignore_rotation = false
 zoom = Vector2(0.5, 0.5)

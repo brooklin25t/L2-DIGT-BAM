@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://doex1ep15kriu" path="res://Scripts/entrance.gd" id="1_1i1ny"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mako7"]
+size = Vector2(528, 40)
 
 [node name="Entrance" type="StaticBody2D" unique_id=1974917991]
 script = ExtResource("1_1i1ny")

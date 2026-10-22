@@ -7,15 +7,26 @@
 atlas = ExtResource("2_hbseo")
 region = Rect2(64, 0, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbseo"]
+atlas = ExtResource("2_hbseo")
+region = Rect2(0, 0, 64, 64)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_m1dus"]
 atlas = ExtResource("2_hbseo")
 region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xg1lv"]
+atlas = ExtResource("2_hbseo")
+region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ryixy"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_evtr4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbseo")
 }],
 "loop": 1,
 "name": &"Lever_off",
@@ -24,6 +35,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_m1dus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xg1lv")
 }],
 "loop": 1,
 "name": &"Lever_on",
@@ -38,7 +52,7 @@ script = ExtResource("1_3rsvo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1503270300]
 sprite_frames = SubResource("SpriteFrames_ryixy")
-animation = &"Lever_off"
+animation = &"Lever_on"
 autoplay = "Lever_off"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=265160013]
