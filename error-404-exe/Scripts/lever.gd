@@ -2,6 +2,7 @@ extends Area2D
 class_name Lever
 
 signal lever_state_changed(is_active: bool)
+signal 
 
 @export var lever_id: int = 0
 # A list of tile coordinates in the Inspector that represent this lever's wire
@@ -19,6 +20,7 @@ func _on_body_entered(body):
 		is_active = true
 		update_visuals()
 		lever_state_changed.emit(is_active)
+		
 
 func update_visuals():
 	if is_active:
