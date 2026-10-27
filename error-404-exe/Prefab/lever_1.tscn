@@ -11,13 +11,13 @@ region = Rect2(64, 0, 64, 64)
 atlas = ExtResource("2_ftgxs")
 region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xg1lv"]
-atlas = ExtResource("2_ftgxs")
-region = Rect2(64, 0, 64, 64)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_m1dus"]
 atlas = ExtResource("2_ftgxs")
 region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xg1lv"]
+atlas = ExtResource("2_ftgxs")
+region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ryixy"]
 animations = [{
@@ -34,10 +34,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xg1lv")
+"texture": SubResource("AtlasTexture_m1dus")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_m1dus")
+"texture": SubResource("AtlasTexture_xg1lv")
 }],
 "loop": 1,
 "name": &"Lever_on",
@@ -49,6 +49,7 @@ radius = 20.024984
 
 [node name="Lever" type="Area2D" unique_id=1145087173]
 script = ExtResource("1_24q8d")
+lever_id = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1503270300]
 sprite_frames = SubResource("SpriteFrames_ryixy")
