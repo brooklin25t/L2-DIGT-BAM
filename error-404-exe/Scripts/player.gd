@@ -90,9 +90,9 @@ func _physics_process(delta: float) -> void:
 	if is_dashing:
 		animated_sprite.flip_h = (dash_direction.x < 0)
 		if abs(dash_direction.x) >= abs(dash_direction.y):
-			animated_sprite.play("Walking x.axis")
+			animated_sprite.play("Dash x.axis")
 		else:
-			animated_sprite.play("Walking y.axis_up" if dash_direction.y < 0 else "Walking y.axis_down")
+			animated_sprite.play("Dash y.axis_up" if dash_direction.y < 0 else "Dash y.axis_down")
 			
 	elif direction != Vector2.ZERO:
 		# WALKING ANIMATIONS

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yutliggmlr7a"
-path="res://.godot/imported/dash-up-f2.png-c3dc573b4188d2dca8b067eab62a1e6b.ctex"
+uid="uid://c355kfox5mf66"
+path="res://.godot/imported/tile-map-overlay.png-ed105eae7c67e0f799713d11abdb5592.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://dash-up-f2.png"
-dest_files=["res://.godot/imported/dash-up-f2.png-c3dc573b4188d2dca8b067eab62a1e6b.ctex"]
+source_file="res://tile-map-overlay.png"
+dest_files=["res://.godot/imported/tile-map-overlay.png-ed105eae7c67e0f799713d11abdb5592.ctex"]
 
 [params]
 
