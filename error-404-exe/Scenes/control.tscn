@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://casnji1td48q8"]
+
+[ext_resource type="Script" uid="uid://8sam00ns6x0l" path="res://Scripts/comic.gd" id="1_wpaqk"]
+
+[node name="Control" type="Control" unique_id=78577274]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wpaqk")
