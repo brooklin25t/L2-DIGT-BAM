@@ -34,36 +34,23 @@ one_shot = true
 autostart = true
 
 [node name="Timer2" type="Timer" parent="." unique_id=1846728015]
-wait_time = 2.0
+wait_time = 5.0
 one_shot = true
+autostart = true
 
 [node name="Timer3" type="Timer" parent="." unique_id=1191663454]
-wait_time = 2.0
+wait_time = 8.0
 one_shot = true
-
-[node name="Timer4" type="Timer" parent="." unique_id=1970566162]
-wait_time = 2.0
-one_shot = true
+autostart = true
 
 [node name="Timer5" type="Timer" parent="." unique_id=566962624]
 one_shot = true
 
-[node name="Timer6" type="Timer" parent="." unique_id=526484684]
-wait_time = 0.3
-one_shot = true
-
-[node name="Timer7" type="Timer" parent="." unique_id=1301477025]
-wait_time = 0.3
-one_shot = true
-
-[node name="Timer8" type="Timer" parent="." unique_id=1277736638]
-wait_time = 0.3
+[node name="Timer6" type="Timer" parent="." unique_id=867323617]
 one_shot = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]
-[connection signal="timeout" from="Timer4" to="." method="_on_timer_4_timeout"]
 [connection signal="timeout" from="Timer5" to="." method="_on_timer_5_timeout"]
 [connection signal="timeout" from="Timer6" to="." method="_on_timer_6_timeout"]
-[connection signal="timeout" from="Timer7" to="." method="_on_timer_7_timeout"]
