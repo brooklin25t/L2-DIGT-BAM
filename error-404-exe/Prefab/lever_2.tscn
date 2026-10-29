@@ -1,21 +1,26 @@
 [gd_scene format=3 uid="uid://c53t71krgd308"]
 
 [ext_resource type="Script" uid="uid://btvgiteivdgw5" path="res://Scripts/lever.gd" id="1_3rsvo"]
+[ext_resource type="Texture2D" uid="uid://c355kfox5mf66" path="res://Sprites/tile-map-overlay-wire-off.png" id="2_0ac1o"]
 [ext_resource type="Texture2D" uid="uid://cti3yoavx0kou" path="res://Sprites/tile-map-overlay.png" id="2_hbseo"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_blpjc"]
-atlas = ExtResource("2_hbseo")
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1rs2"]
+atlas = ExtResource("2_0ac1o")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hdxda"]
 atlas = ExtResource("2_hbseo")
 region = Rect2(128, 0, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_blpjc"]
+atlas = ExtResource("2_hbseo")
+region = Rect2(192, 0, 64, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_ryixy"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_blpjc")
+"texture": SubResource("AtlasTexture_h1rs2")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hdxda")

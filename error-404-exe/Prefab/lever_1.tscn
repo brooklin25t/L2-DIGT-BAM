@@ -1,29 +1,30 @@
 [gd_scene format=3 uid="uid://bff3xywhb43q0"]
 
-[ext_resource type="Script" uid="uid://btvgiteivdgw5" path="res://Scripts/lever.gd" id="1_24q8d"]
+[ext_resource type="Script" uid="uid://cfqbihgp8v7a3" path="res://Scripts/lever_2.gd" id="1_6rmpu"]
+[ext_resource type="Texture2D" uid="uid://c355kfox5mf66" path="res://Sprites/tile-map-overlay-wire-off.png" id="2_6rmpu"]
 [ext_resource type="Texture2D" uid="uid://cti3yoavx0kou" path="res://Sprites/tile-map-overlay.png" id="2_ftgxs"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_evtr4"]
-atlas = ExtResource("2_ftgxs")
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1fia"]
+atlas = ExtResource("2_6rmpu")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hbseo"]
 atlas = ExtResource("2_ftgxs")
 region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_m1dus"]
-atlas = ExtResource("2_ftgxs")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xg1lv"]
-atlas = ExtResource("2_ftgxs")
+[sub_resource type="AtlasTexture" id="AtlasTexture_1aukl"]
+atlas = ExtResource("2_6rmpu")
 region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihyky"]
+atlas = ExtResource("2_6rmpu")
+region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ryixy"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_evtr4")
+"texture": SubResource("AtlasTexture_a1fia")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hbseo")
@@ -34,10 +35,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_m1dus")
+"texture": SubResource("AtlasTexture_1aukl")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xg1lv")
+"texture": SubResource("AtlasTexture_ihyky")
 }],
 "loop": 1,
 "name": &"Lever_on",
@@ -48,11 +49,11 @@ animations = [{
 radius = 20.024984
 
 [node name="Lever" type="Area2D" unique_id=1145087173]
-script = ExtResource("1_24q8d")
+script = ExtResource("1_6rmpu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1503270300]
 sprite_frames = SubResource("SpriteFrames_ryixy")
-animation = &"Lever_on"
+animation = &"Lever_off"
 autoplay = "Lever_off"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=265160013]

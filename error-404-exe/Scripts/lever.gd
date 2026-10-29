@@ -5,6 +5,7 @@ class_name Lever
 signal state_changed(is_on)
 signal lever_state_changed(is_active: bool)
 signal tilemaplayer_change
+signal on_lever_2_changed
 
 @export var lever_id: int = 0
 var is_active: bool = false
@@ -20,6 +21,8 @@ func _on_body_entered(body):
 		is_active = true
 		update_visuals()
 		lever_state_changed.emit(self, is_active)
+		tilemaplayer_change.emit()
+		on_lever_2_changed.emit()
 
 func update_visuals():
 	sprite.stop()
