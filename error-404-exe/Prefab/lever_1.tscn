@@ -49,7 +49,6 @@ radius = 20.024984
 
 [node name="Lever" type="Area2D" unique_id=1145087173]
 script = ExtResource("1_24q8d")
-lever_id = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1503270300]
 sprite_frames = SubResource("SpriteFrames_ryixy")

@@ -10,26 +10,20 @@ signal tilemaplayer_change
 var is_active: bool = false
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
+
 func _ready():
 	body_entered.connect(_on_body_entered)
 	update_visuals()
 
-
-	# Toggle lever state when the player touches it
-	if body.is_in_group("Player"):
-		toggle_lever()
-
-func toggle_lever():
-	is_active = !is_active
-	update_visuals()
-	state_changed.emit(is_active)
+func _on_body_entered(body):
 	if body.is_in_group("Player") and not is_active:
 		is_active = true
 		update_visuals()
-		lever_state_changed.emit(is_active)
-
+		lever_state_changed.emit(self, is_active)
 
 func update_visuals():
-	if sprite:
-		sprite.stop()
-		sprite.frame = 1 if is_active else 0
+	sprite.stop()
+	if is_active:
+		sprite.frame = 1
+	else:
+		sprite.frame = 0
