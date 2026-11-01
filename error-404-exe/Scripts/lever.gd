@@ -11,7 +11,6 @@ signal on_lever_2_changed
 var is_active: bool = false
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-
 func _ready():
 	body_entered.connect(_on_body_entered)
 	update_visuals()
