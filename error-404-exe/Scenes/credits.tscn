@@ -84,8 +84,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
+[node name="Button" type="Button" parent="Control" unique_id=707031215]
+layout_mode = 0
+offset_left = -202.0
+offset_top = -618.0
+offset_right = 1266.0
+offset_bottom = 1887.0
+
 [node name="Timer" type="Timer" parent="." unique_id=1381346539]
 wait_time = 13.5
 autostart = true
 
+[connection signal="pressed" from="Control/Button" to="Control/Creditscontainer/VBoxContainer" method="_on_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
