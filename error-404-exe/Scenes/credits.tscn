@@ -10,6 +10,9 @@ font_size = 30
 line_spacing = 4.0
 font_size = 20
 
+[sub_resource type="LabelSettings" id="LabelSettings_gryuy"]
+font_size = 28
+
 [node name="credits" type="Node2D" unique_id=1372713175]
 script = ExtResource("1_gryuy")
 
@@ -24,7 +27,7 @@ offset_bottom = 768.0
 layout_mode = 0
 offset_top = -288.0
 offset_right = 1160.0
-offset_bottom = 1024.0
+offset_bottom = 1167.0
 color = Color(0, 0, 0, 1)
 
 [node name="Creditscontainer" type="Control" parent="Control" unique_id=1441018799]
@@ -84,16 +87,17 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Button" type="Button" parent="Control" unique_id=707031215]
-layout_mode = 0
+[node name="exit button" type="Label" parent="Control/Creditscontainer/VBoxContainer" unique_id=1832934890]
+layout_mode = 2
+text = "Click any where to Exit"
+label_settings = SubResource("LabelSettings_gryuy")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=707031215]
 offset_left = -202.0
-offset_top = -618.0
+offset_top = -386.0
 offset_right = 1266.0
-offset_bottom = 1887.0
+offset_bottom = 2119.0
 
-[node name="Timer" type="Timer" parent="." unique_id=1381346539]
-wait_time = 13.5
-autostart = true
-
-[connection signal="pressed" from="Control/Button" to="Control/Creditscontainer/VBoxContainer" method="_on_button_pressed"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button" to="Control/Creditscontainer/VBoxContainer" method="_on_button_pressed"]
