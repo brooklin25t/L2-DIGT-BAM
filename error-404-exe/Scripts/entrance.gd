@@ -27,7 +27,7 @@ func close_door():
 	print("Door Closed!")
 	collision_layer = 1
 	collision_mask = 1
-	enterance.visible = false
+	enterance.visible = true
 	# Play closing animation or enable collision here
 
 
